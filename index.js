@@ -77,4 +77,4 @@ const app = Vue.createApp({
     }
 });
 
-app.mount('#sectionA');
+app.mount('#application');
