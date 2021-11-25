@@ -2,9 +2,10 @@ const app = Vue.createApp({
 
     data() {
         return {
-            //select01   :"",
-            //select02   :"",
-            //select03   :"",
+            selectA    :"",
+            selectB    :"",
+            selectC    :"",
+            selectD    :"",
             value001   :25,
             value002   :50,
             value003   :75,
