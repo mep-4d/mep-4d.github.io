@@ -59,7 +59,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
   <!-- Header -->
-  <header class="w3-container"><h2><b>Design Tools</b></h2></header>
+  <header class="w3-container"><h2><b>Asset ID Tools</b></h2></header>
 
 <div class="w3-container w3-padding-16 w3-teal">
 <h3>Device Identification</h3>
@@ -96,33 +96,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <button v-on:click="reset()" class="w3-button w3-ripple w3-red">Reset Selection</button>
     <button v-on:click="find()" class="w3-button w3-ripple w3-green">Get ID</button>
 </div>
-
-<div v-if="seen" class="w3-panel">
-</div>
-
+    
 <p>Result: {{resource}}</p>
-  
-  <div class="w3-panel w3-ios-pink">
-     <div class="w3-row">
-          <div class="w3-threequarter">
-             <p>
-             <label class="w3-text-light-grey"><b>Input Task</b></label>
-             <input v-model="taskText" class="w3-input w3-border" type="text">
-             </p>
-          </div>
-          <div class="w3-container w3-quarter w3-margin-top">
-              <br>
-             <button v-on:click="addTask" class="w3-button w3-black w3-round-xxlarge" style="width:230px">Go - Add To Do</button>
-          </div>
-        </div>
-      <div class="w3-container">
-          <p v-if="tasksA.length === 0">No tasks have been assigned, Write your task above and hit add!!</p>
-          <ul v-else>
-              <li v-for="(item, indexNum) in tasksA" v-on:click="removeTask(indexNum)">{{ item }}-{{ indexNum + 1 }}</li>
-          </ul>
-          
-      </div>
-    </div>
 
 <hr>
 
