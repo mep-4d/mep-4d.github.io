@@ -25,18 +25,6 @@ const app = Vue.createApp({
     },
 
     computed: {
-        bar01Style() {
-            return {width: this.value001 + "%", backgroundColor: this.colorA}
-        },
-        bar02Style() {
-            return {width: this.value002 + "%"}
-        },
-        bar03Style() {
-            return {width: this.value003 + "%"}
-        },
-        bar04Style() {
-            return {width: this.value004 + "%"}
-        },
     },
 
     methods: {
@@ -48,7 +36,6 @@ const app = Vue.createApp({
         },
         log() {
             console.log(this.select01, this.select02);
-             
         },
         listManufacturers() {
             var m01 = this.manuA
