@@ -26,6 +26,7 @@ var app1 = new Vue({
         
         classData   : "w3-container w3-red w3-padding-16",
         styler      : false,
+        resource    : "TEST"
         
     }, // --- End of data --- //
     computed: {
