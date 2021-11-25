@@ -1,19 +1,226 @@
 <!DOCTYPE html>
 <html>
-<title>Smart Building Design Tools</title>
+<head>
+    
+<title>Tecta DVC</title>
+<meta charset="UTF-8">
+
+<link rel="icon" href="http://example.com/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.highcharts.com/highcharts.js"></script>
 
-<div class="w3-container">
-  <h2>Device Addressing</h2>
-  <p>Panels are the same as containers except for an added top and bottom margin.</p>
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
 
-  <div class="w3-panel w3-grey">
-    <p>I am a panel.</p>
+</head>
+
+<body class="w3-light-grey">
+    
+<div id="app">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-green w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right"><b>MEP 4D - DVC Tools</b></span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <!--<img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">-->
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span>Welcome <strong>Team Member</strong></span><br>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Menu</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="/assets" class="w3-bar-item w3-button w3-padding"><i class="fa fa-database"></i>  Assets</a>
+    <a href="/points" class="w3-bar-item w3-button w3-padding"><i class="fa fa-hashtag"></i>  Points</a>
+    <a href="/onboarding" class="w3-bar-item w3-button w3-padding"><i class="fa fa-building"></i>  Onboarding</a>
+    <a href="/mqtt" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope-o"></i>  MQTT</a>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h2><b>Blossom Street - British Land</b></h2>
+  </header>
+  <br>
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-deep-purple w3-padding-16">
+        <div class="w3-left"><i class="fa fa-file-o w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 id="val001">{{value001}}</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Things in DIR</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-wifi w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 id="val002">{{value002}}</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Things Online</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-indigo w3-padding-16">
+        <div class="w3-left"><i class="fa fa-cloud-upload w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 id="val003">{{value003}}</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>MQTT Operational</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-wrench w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 id="val004">{{value004}}</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Snags</h4>
+      </div>
+    </div>
   </div>
 
+
+  <div class="w3-panel">
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <h4><b>Smart System Communications</b></h4>
+        <column-chart :data="columnChartA"></column-chart>
+      </div>
+      <div class="w3-half">
+        <h4><b>Smart Systems Progress</b></h4>
+        <table class="w3-table-all w3-card-4">
+          <tr class="w3-green">
+            <td style="width:25%">System</td>
+            <td style="text-align:center;width:20%">Smart Network</td>
+            <td style="text-align:center;width:20%">Data Testing</td>
+            <td style="text-align:center;width:20%">Data Validation</td>
+          </tr>
+          <tr>
+            <td>HVAC/MEP</td>
+            <td id="val005" style="text-align:center">{{value005}}</td>
+            <td id="val006" style="text-align:center">{{value006}}</td>
+            <td id="val007" style="text-align:center">{{value007}}</td>
+          </tr>
+          <tr>
+            <td>Lighting</td>
+            <td id="val008" style="text-align:center">{{value008}}</td>
+            <td id="val009" style="text-align:center">{{value009}}</td>
+            <td id="val010" style="text-align:center">{{value010}}</td>
+          </tr>
+          <tr>
+            <td>Security</td>
+            <td id="val011" style="text-align:center">{{value011}}</td>
+            <td id="val012" style="text-align:center">{{value012}}</td>
+            <td id="val013" style="text-align:center">{{value013}}</td>
+          </tr>
+          <tr>
+            <td>Lifts</td>
+            <td id="val014" style="text-align:center">{{value014}}</td>
+            <td id="val015" style="text-align:center">{{value015}}</td>
+            <td id="val016" style="text-align:center">{{value016}}</td>
+          </tr>
+        </table>
+<br>
+        <table class="w3-table-all w3-card-4">
+          <tr class="w3-green">
+            <td style="width:20%"></td>
+            <td style="width:20%">HVAC/MEP</td>
+            <td style="width:20%">Lighting</td>
+            <td style="width:20%">Security</td>
+            <td style="width:20%">Lifts</td>
+          </tr>
+          <tr>
+            <td>Data Rate</td>
+            <td id="val017">{{value017}}</td>
+            <td id="val018">{{value018}}</td>
+            <td id="val019">{{value019}}</td>
+            <td id="val020">{{value020}}</td>
+          </tr>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="w3-container">
+    <h4><b>Smart Enablement Progress</b></h4>
+    <line-chart :data="lineChartA"></line-chart>
+  </div>
+  
+<hr>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <p>Powered by Tecta Analytics</p>
+  </footer>
+
+  <!-- End page content -->
 </div>
+</div>
+
+    <script src="../uibuilder/vendor/socket.io/socket.io.js"></script>
+    <script src="../uibuilder/vendor/vue/dist/vue.min.js"></script>
+    <script src="../uibuilder/vendor/bootstrap-vue/dist/bootstrap-vue.js"></script>
+    <script src="https://unpkg.com/chart.js@2.8.0/dist/Chart.bundle.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://unpkg.com/vue-chartkick@0.5.1"></script>
+    <script src="./uibuilderfe.min.js"></script>
+    <script src="./index.js"></script>
+    
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
 
 </body>
 </html>
