@@ -18,12 +18,10 @@ const app = Vue.createApp({
     methods: {
         
         listItem() {
-            var a = this.listsA
-            var A = this.selectA
-            console.log(a);
-            console.log(A);
-            if (this.selectA.includes("Mech")) {
-                this.list01 = a      
+            console.log("selection");
+            if (this.selectA == "1") {
+                console.log("mechanical selected")
+                //this.list01 = a      
             }
         }
         
