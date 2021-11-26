@@ -28,7 +28,7 @@ const app = Vue.createApp({
 
     methods: {
         
-        listItems() {
+        listItem() {
             var mec = ["AHU","FCU","VAV","Boiler","Chiller","Pump"]
             if (this.selectA.includes("Mech")) {
                 this.list01 = mec          
