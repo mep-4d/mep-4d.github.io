@@ -19,9 +19,10 @@ const app = Vue.createApp({
         
         listItem() {
             console.log("selection");
+            var a = this.listsA
             if (this.selectA == "1") {
+                this.list01 = a      
                 console.log("mechanical selected")
-                //this.list01 = a      
             }
         }
         
