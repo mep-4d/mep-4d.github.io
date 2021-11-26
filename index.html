@@ -76,15 +76,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <option value="6">AV/IT</option>
     <option value="7">Fire</option>
     <option value="8">Security</option>
-
     </select>
   </div>
   <div class="w3-quarter">
     <select v-model="selectB" class="w3-select" name="option">
-    <option value="" disabled selected>Item</option>
-    <option value="1">First floor</option>
-    <option value="2">Second floor</option>
-    <option value="3">Third Floor</option>
+    <option v-for="item in list01">{{ item }}</option>
     </select>
   </div>
   <div class="w3-quarter">
