@@ -7,7 +7,7 @@ const app = Vue.createApp({
             selectC    :"",
             selectD    :"",
             list01     :[],
-            manuA      :["AHU's 01","AHU's 02","AHU's 03"],
+            listsA     :["AHU","FCU","VAV","Boiler","Chiller","Pump"],
             manuAunitsA:["unitA","unitB","unitC"],
             manuAunitsB:["unitD","unitE","unitF"],
             manuAunitsC:["unitG","unitH","unitI"],
@@ -23,10 +23,10 @@ const app = Vue.createApp({
     methods: {
         
         listItem() {
-            var mec = ["AHU","FCU","VAV","Boiler","Chiller","Pump"]
+            var a = this.listsA
             if (this.selectA.includes("Mech")) {
-                console.log(mec)
-                this.list01 = mec          
+                console.log(a)
+                this.list01 = a      
             }
         }
         
