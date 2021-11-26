@@ -23,6 +23,7 @@ const app = Vue.createApp({
     methods: {
         
         function:listItem() {
+            console.log(mec)
             var mec = ["AHU","FCU","VAV","Boiler","Chiller","Pump"]
             if (this.selectA.includes("Mech")) {
                 this.list01 = mec          
@@ -31,10 +32,9 @@ const app = Vue.createApp({
             } else if (this.selectA.includes("MAU")) {
                 this.list01 = mec      
             } 
-            console.log(mec)
         }
         
-    }
+    },
 });
 
 app.mount('#application');
