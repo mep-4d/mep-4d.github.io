@@ -28,7 +28,7 @@ const app = Vue.createApp({
             if (this.selectA.includes("Mech")) {
                 this.list01 = mec          
             }
-        };
+        }
         
     }
    
