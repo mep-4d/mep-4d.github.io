@@ -8,11 +8,6 @@ const app = Vue.createApp({
             selectD    :"",
             list01     :[],
             listsA     :["AHU","FCU","VAV","Boiler","Chiller","Pump"],
-            manuAunitsA:["unitA","unitB","unitC"],
-            manuAunitsB:["unitD","unitE","unitF"],
-            manuAunitsC:["unitG","unitH","unitI"],
-            colorA     :"red",
-            show       : true,
             resource   :"TEST"
         };
     },
