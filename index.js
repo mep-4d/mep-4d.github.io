@@ -19,7 +19,9 @@ const app = Vue.createApp({
         
         listItem() {
             var a = this.listsA
+            var A = this.selectA
             console.log(a);
+            console.log(A);
             if (this.selectA.includes("Mech")) {
                 this.list01 = a      
             }
