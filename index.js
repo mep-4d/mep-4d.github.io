@@ -27,15 +27,11 @@ const app = Vue.createApp({
             var mec = ["AHU","FCU","VAV","Boiler","Chiller","Pump"]
             if (this.selectA.includes("Mech")) {
                 this.list01 = mec          
-            } else if (this.selectA.includes("RTU")) {
-                this.list01 = mec   
-            } else if (this.selectA.includes("MAU")) {
-                this.list01 = mec      
-            } 
-        }
+            }
+        };
         
-    },
-        
+    }
+   
 });
 
 app.mount('#application');
