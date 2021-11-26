@@ -32,7 +32,7 @@ const app = Vue.createApp({
                 this.list01 = mec      
             } 
             console.log(mec)
-        },
+        }
         
     }
 });
