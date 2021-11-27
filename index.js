@@ -63,7 +63,7 @@ const app = Vue.createApp({
         },
         
         createTableA() {
-        var table = new Tabulator("#table-a", {
+        var table = new Tabulator("#table", {
             data:this.tableAData, //assign data to table
             layout:"fitColumns",
             columns:[
