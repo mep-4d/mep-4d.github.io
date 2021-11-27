@@ -7,6 +7,7 @@ const app = Vue.createApp({
             selectC    :"",
             selectD    :"",
             list01     :[],
+            list02     :["01","02","03","04","05","06","07","08","09","10"],
             listsA     :["AHU","FCU","VAV","Extract Fan","Supply Fan","Smoke Fan","Boiler","Chiller","Pump","Valve","Commissioning Point"],
             listsB     :["DB","Switch Board","Socket Outlet","Fused Outlet","Isolator"],
             listsC     :["CHW Thermal Energy","LTHW Thermal Energy","Electricity","Water","Gas"],
