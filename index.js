@@ -39,7 +39,7 @@ const app = Vue.createApp({
                 this.list01 = d      
                 console.log("ltg selected")
             }
-        };
+        }
         
     }
    
