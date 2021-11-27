@@ -20,7 +20,20 @@ const app = Vue.createApp({
                 "B3","B2","B1","Gnd North","Gnd East","Gnd South","Gnd West","1st North","1st East","1st South","1st West","2nd North","2nd East","2nd South","2nd West",
                 "3rd North","3rd East","3rd South","3rd West","4th North","4th East","4th South","4th West","5th North","5th East","5th South","5th West"
             ],
-            resource   :"TEST"
+            resource   :"TEST",
+            tableAData :
+                [
+                ["MEP","AHU","Roof","BlBlStMEP-RfAHU001","TBC","TBC","N/A","Process Layer",true,true],
+                ["MEP","AHU","Roof","BlBlStMEP-RfAHU002","TBC","TBC","N/A","Process Layer",true,true], 
+                ["MEP","AHU","Roof","BlBlStMEP-RfAHU003","TBC","TBC","N/A","Process Layer",true,true],
+                ["MEP","HRU","Bmnt1","BlBlStMEP-B1HRU001","TBC","TBC","N/A","Process Layer",true,true],
+                ["MEP","HRU","Bmnt1","BlBlStMEP-B1HRU002","TBC","TBC","N/A","Process Layer",true,true], 
+                ["MEP","Boiler","Roof","BlBlStMEP-RfBLR001","TBC","TBC","N/A","Process Layer",true,true],
+                ["MEP","Boiler","Roof","BlBlStMEP-RfBLR002","TBC","TBC","N/A","Process Layer",true,true],
+                ["MEP","Boiler","Roof","BlBlStMEP-RfBLR003","TBC","TBC","N/A","Process Layer",true,true],
+                ["MEP","Pump","Roof","BlBlStMEP-RfHTGP01","TBC","TBC","N/A","Process Layer",true,true],
+                ["MEP","Pump","Roof","BlBlStMEP-RfHTGP02","TBC","TBC","N/A","Process Layer",true,true],
+                ]
         };
     },
 
@@ -47,7 +60,26 @@ const app = Vue.createApp({
             else if (this.selectA == "6") {this.list01 = f; console.log("avi selected")}
             else if (this.selectA == "7") {this.list01 = g; console.log("fir selected")}
             else if (this.selectA == "8") {this.list01 = h; console.log("sec selected")} 
-        }
+        },
+        
+        createTableA() {
+        var table = new Tabulator("#table-a", {
+            data:this.tableAData, //assign data to table
+            layout:"fitColumns",
+            columns:[
+            {title:"Smart System", field:"sys"},
+            {title:"Asset Type", field:"typ"},
+            {title:"Location", field:"loc"},
+            {title:"Unique ID(s)", field:"uid", width:200},
+            {title:"Manufacturer", field:"man"},
+            {title:"Part Code", field:"cod"},
+            {title:"Protocol", field:"com"},
+            {title:"Con Method", field:"con"},
+            {title:"Online", field:"onl", hozAlign:"center", formatter:"tickCross"},
+            {title:"ID Applied", field:"pts", hozAlign:"center", formatter:"tickCross"},
+            ],
+            });
+        },
         
     }
    
