@@ -26,19 +26,10 @@ const app = Vue.createApp({
             var b = this.listsB
             var c = this.listsC
             var d = this.listsD
-            if (this.selectA == "1") {
-                this.list01 = a      
-                console.log("mec selected")
-            } else if (this.selectA == "2") {
-                this.list01 = b      
-                console.log("lec selected")
-            } else if (this.selectA == "3") {
-                this.list01 = c      
-                console.log("mtr selected")
-            } else if (this.selectA == "4") {
-                this.list01 = d      
-                console.log("ltg selected")
-            }
+            if (this.selectA == "1") {this.list01 = a; console.log("mec selected")} 
+            else if (this.selectA == "2") {this.list01 = b; console.log("lec selected")} 
+            else if (this.selectA == "3") {this.list01 = c; console.log("mtr selected")} 
+            else if (this.selectA == "4") {this.list01 = d; console.log("ltg selected")}
         }
         
     }
