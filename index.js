@@ -20,7 +20,7 @@ const app = Vue.createApp({
                 "B3","B2","B1","Gnd North","Gnd East","Gnd South","Gnd West","1st North","1st East","1st South","1st West","2nd North","2nd East","2nd South","2nd West",
                 "3rd North","3rd East","3rd South","3rd West","4th North","4th East","4th South","4th West","5th North","5th East","5th South","5th West"
             ],
-            resource   :"TEST",
+            resource   :"",
         };
     },
 
@@ -47,8 +47,16 @@ const app = Vue.createApp({
             else if (this.selectA == "6") {this.list01 = f; console.log("avi selected")}
             else if (this.selectA == "7") {this.list01 = g; console.log("fir selected")}
             else if (this.selectA == "8") {this.list01 = h; console.log("sec selected")} 
-        },
+            },
         
+        identifyA() {
+            console.log("go idetify A");
+            var a = this.selectA
+            var b = this.selectB
+            var c = this.selectC
+            var d = this.selectD
+            this.resource = a + b + c + d
+            }
     }
    
 });
