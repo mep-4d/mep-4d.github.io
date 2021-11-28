@@ -50,12 +50,13 @@ const app = Vue.createApp({
             },
         
         identifyA() {
-            console.log("go idetify A");
             var a = this.selectA
             var b = this.selectB
             var c = this.selectC
             var d = this.selectD
-            this.resource = a + b + c + d
+            var e = a + b + c + d
+            this.resource = e
+            console.log(e);
             }
     }
    
