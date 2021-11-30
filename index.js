@@ -59,7 +59,7 @@ const app = Vue.createApp({
             var b = this.selectB
             var c = this.selectC
             var d = this.textInA
-            var e = str + b + c + d
+            var e = str +"_"+ b +"_"+ c +"_"+ d
             this.resource = e
             console.log(e);
             }
