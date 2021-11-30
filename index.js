@@ -5,7 +5,6 @@ const app = Vue.createApp({
             selectA    :"",
             selectB    :"",
             selectC    :"",
-            selectD    :"",
             textInA    :"",
             list01     :[],
             listsA     :["AHU","FCU","VAV","Extract_Fan","Supply_Fan","Smoke_Fan","Boiler","Chiller","Pump","Valve","Commissioning_Point"],
@@ -57,7 +56,7 @@ const app = Vue.createApp({
             var a = this.selectA
             var b = this.selectB
             var c = this.selectC
-            var d = this.selectD
+            var d = this.textInA
             var e = a + b + c + d
             this.resource = e
             console.log(e);
