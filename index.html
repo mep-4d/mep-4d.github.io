@@ -94,9 +94,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <option v-for="item in locate">{{ item }}</option>
     </select>
   </div>
-    <hr>
   <div class="w3-quarter">
-    <input v-on:input="inputA($event)" class="w3-input w3-border" type="text">
+      <div class="w3-container w3-padding-16 w3-green">
+         <input v-on:input="inputA($event)" class="w3-input w3-border" type="text">
+      </div>
   </div>
 </div>
 </div>
