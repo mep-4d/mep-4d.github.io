@@ -54,10 +54,12 @@ const app = Vue.createApp({
         
         identifyA() {
             var a = this.selectA
+            var str
+            if(a==1){str=="mec"}else if(a==2){str=="lec"}else if(a==3){str=="met"}else if(a==4){str=="ltg"}else if(a==5){str=="bms"}else if(a==6){str=="avt"}else if(a==7){str=="fre"}else if(a==8){str=="sec"};
             var b = this.selectB
             var c = this.selectC
             var d = this.textInA
-            var e = a + b + c + d
+            var e = str + b + c + d
             this.resource = e
             console.log(e);
             }
