@@ -102,6 +102,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
 </div>
 </div>
+    
+   <div class="w3-container w3-card-4 w3-ios-deep-blue">
+      <p>
+      <label class="w3-text-light-grey"><b>Input Text Here</b></label>
+      <input v-on:input="inputA($event, 'something')" class="w3-input w3-border" type="text">
+      </p>
+      <p>{{textInA}}</p>
+  </div>
+    
 <div class="w3-container w3-padding-16 w3-teal">
     <button v-on:click="reset()" class="w3-button w3-ripple w3-red">Reset Selection</button>
     <button v-on:click="identifyA()" class="w3-button w3-ripple w3-green">Get ID</button>
