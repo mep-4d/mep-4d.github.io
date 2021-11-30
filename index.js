@@ -8,7 +8,6 @@ const app = Vue.createApp({
             selectD    :"",
             textInA    :"",
             list01     :[],
-            list02     :["01","02","03","04","05","06","07","08","09","10"],
             listsA     :["AHU","FCU","VAV","Extract_Fan","Supply_Fan","Smoke_Fan","Boiler","Chiller","Pump","Valve","Commissioning_Point"],
             listsB     :["DB","Switch_Board","Socket_Outlet","Fused_Outlet","Isolator"],
             listsC     :["CHW_Thermal_Energy","LTHW_Thermal_Energy","Electricity","Water","Gas"],
