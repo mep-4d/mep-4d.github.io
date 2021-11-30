@@ -94,16 +94,19 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <option v-for="item in locate">{{ item }}</option>
     </select>
   </div>
+    <br>
   <div class="w3-quarter">
-    <input v-on:input="inputA($event, 'something')" class="w3-input w3-border" type="text">
+    <input v-on:input="inputA($event)" class="w3-input w3-border" type="text">
   </div>
 </div>
 </div>
     
+    <p>{{textInA}}</p>
+    
 <div class="w3-container w3-padding-16 w3-teal">
     <button v-on:click="reset()" class="w3-button w3-ripple w3-red">Reset Selection</button>
     <button v-on:click="identifyA()" class="w3-button w3-ripple w3-green">Get ID</button>
-    <h3>Result: {{resource}} {{textInA}}</h3>
+    <h3>Result: {{resource}}</h3>
 </div>
 
     <hr>
