@@ -28,6 +28,14 @@ const app = Vue.createApp({
 
     methods: {
         
+        sendData() {
+            var data = {"data":{"paramA":"a","paramB":"b","paramC":"c","paramD":"d","paramE":"e","paramF":"f","paramG":"g","paramH":"h","paramI":"i","paramJ":"j"}}
+            var Request = new XMLHttpRequest();
+            var url = "https://api.apispreadsheets.com/data/20934/";
+            Request.open('POST', url, true);
+            Request.send(data);
+            },
+        
         listItem() {
             console.log("selection");
             var a = this.listsA
