@@ -34,6 +34,7 @@ const app = Vue.createApp({
             var url = "https://api.apispreadsheets.com/data/20934/";
             Request.open('POST', url, true);
             Request.send(data);
+            console.log(data);
             },
         
         listItem() {
