@@ -63,6 +63,13 @@ const app = Vue.createApp({
             },
         
         identifyA() {
+	    fetch("https://api.apispreadsheets.com/data/20934/").then(res=>{
+	    if (res.status === 200){
+		res.json().then(data=>{
+			const yourData = data
+		}).catch(err => console.log(err))}else{console.log("nah")}
+		console.log(yourData)
+            })
             var a = this.selectA
             var str
             if(a==1){str=="mec"}else if(a==2){str=="lec"}else if(a==3){str=="met"}else if(a==4){str=="ltg"}else if(a==5){str=="bms"}else if(a==6){str=="avt"}else if(a==7){str=="fre"}else if(a==8){str=="sec"};
@@ -71,7 +78,6 @@ const app = Vue.createApp({
             var d = this.textInA
             var e = str +"_"+ b +"_"+ c +"_"+ d
             this.resource = e
-            console.log(e);
             }
     }
    
