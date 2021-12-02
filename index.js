@@ -29,12 +29,13 @@ const app = Vue.createApp({
     methods: {
         
         sendData() {
-            var data = {"data":{"paramA":"a","paramB":"b","paramC":"c","paramD":"d","paramE":"e","paramF":"f","paramG":"g","paramH":"h","paramI":"i","paramJ":"j"}}
-            var Request = new XMLHttpRequest();
-            var url = "https://api.apispreadsheets.com/data/20934/";
-            Request.open('POST', url, true);
-            Request.send(data);
-            console.log(data);
+            fetch("https://api.apispreadsheets.com/data/20934/", {
+	        method: "POST",
+	        body: JSON.stringify({"data": {"paramA":"a","paramB":"b","paramC":"c","paramD":"d","paramE":"e","paramF":"f","paramG":"g","paramH":"h","paramI":"i","paramJ":"j"}}),
+            }).then(res =>{
+	        if (res.status === 201){console.log("success")} 
+                else{console.log("nah")}
+            })
             },
         
         listItem() {
