@@ -67,8 +67,8 @@ const app = Vue.createApp({
 	    if (res.status === 200){
 		res.json().then(data=>{
 			const yourData = data
+			console.log(yourData)
 		}).catch(err => console.log(err))}else{console.log("nah")}
-		console.log(yourData)
             })
             var a = this.selectA
             var str
