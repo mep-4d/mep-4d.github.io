@@ -6,7 +6,9 @@ const app = Vue.createApp({
             selectM2   :"",
             selectM3   :"",
             listsMA    :["AHU","FCU","VAV","Extract Fan","Supply Fan","Smoke Fan","MVHR","Smoke Damper","Control Damper","Air Diffuser","..."],
-            listsMB    :["Boilers","Chillers","Control Valves","Pumps","..."],
+            listsMB    :["Boilers","Chillers","CHP","Control Valves","Pumps","Energy Meter","..."],
+            listsMC    :["Booster Set","Tanks","Valves","Flow Meter","..."],
+            listsMD    :["Valve","Booster","Valves","Gas Meter","..."],
             selectA    :"",
             selectB    :"",
             selectC    :"",
@@ -49,8 +51,12 @@ const app = Vue.createApp({
             console.log("selectionMA");
             var a = this.listsMA
             var b = this.listsMB
+            var c = this.listsMC
+            var d = this.listsMD
             if (this.selectM1 == "1") {this.listM1 = a} 
             else if (this.selectM1 == "2") {this.listM1 = b} 
+            else if (this.selectM1 == "3") {this.listM1 = c} 
+            else if (this.selectM1 == "4") {this.listM1 = d} 
             },
         listTypesM() {
             console.log("selection");
