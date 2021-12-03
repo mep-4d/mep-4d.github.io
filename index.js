@@ -30,11 +30,10 @@ const app = Vue.createApp({
             ],
             resource   :"",
 	    tabledata : [
- 	    {a:1, b:"Oli Bob", c:"12", d:"red"},
- 	    {a:2, b:"Mary May", c:"1", d:"blue"},
- 	    {a:3, b:"Christine Lobowski", c:"42", d:"green"},
- 	    {a:4, b:"Brendon Philips", c:"125", d:"orange"},
- 	    {a:5, b:"Margret Marmajuke", c:"16", d:"yellow"},
+ 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:""},
+ 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:""},
+ 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:""},
+ 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:""},
             ]
         };
     },
@@ -53,6 +52,10 @@ const app = Vue.createApp({
 	 	{title:"Part No.", field:"b"},
 	 	{title:"Description", field:"c"},
 	 	{title:"Commission", field:"d"},
+	 	{title:"Performance", field:"e"},
+	 	{title:"Life", field:"f"},
+	 	{title:"Cost", field:"g"},
+	 	{title:"Issues", field:"h"},
  	        ],
             });    
 	    },
