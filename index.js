@@ -6,7 +6,7 @@ const app = Vue.createApp({
             selectM2   :"",
             selectM3   :"",
             listsMA    :["AHU","FCU","VAV","Extract Fan","Supply Fan","Smoke Fan","MVHR","Smoke Damper","Control Damper","Air Diffuser","..."],
-            listsMB    :["Boiler","Chiller","Control Valve","Isolation Valve","Balancing Valve","..."],
+            listsMB    :["Boilers","Chillers","Control Valves","Pumps","..."],
             selectA    :"",
             selectB    :"",
             selectC    :"",
@@ -56,7 +56,8 @@ const app = Vue.createApp({
             console.log("selection");
 	    if (this.selectM2.includes("Boil")) {this.listM2 = new Array("d","e","f")}
 	    else if (this.selectM2.includes("Chil")) {this.listM2 = new Array("a","b","c")}
-	    else if (this.selectM2.includes("Cont")) {this.listM2 = new Array("PICV","DRV","DPCV")}
+	    else if (this.selectM2.includes("Valv")) {this.listM2 = new Array("PICV","DRV","DPCV")}
+	    else if (this.selectM2.includes("Pump")) {this.listM2 = new Array("Small Pump","2 Pump Set","3 Pump Set")}
             },
         
         listItem() {
