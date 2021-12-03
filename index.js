@@ -54,6 +54,8 @@ const app = Vue.createApp({
             },
         listTypesM() {
             console.log("selection");
+	    if (this.selectM2.includes("Chill")) {this.listM2.splice("a","b","c")} 
+	    else if (this.selectM2.includes("Boil")) {this.listM2.splice("d","e","f")} 
             },
         
         listItem() {
