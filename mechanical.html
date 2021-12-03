@@ -2,7 +2,7 @@
 <html>
 <head>
     
-<title>MSI Tool</title>
+<title>Mechanical</title>
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->
 <div class="w3-bar w3-top w3-indigo w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right"><b>Project Nexus</b></span>
+  <span class="w3-bar-item w3-right"><b>Mechanical</b></span>
 </div>
 
 <!-- Sidebar/menu -->
@@ -52,8 +52,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
     <a href="/index" class="w3-bar-item w3-button w3-padding"><i class="fa fa-house"></i>  Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-clipboard"></i>  Testing</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-wrench"></i>  Onboarding</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-clipboard"></i>  Page 2</a>
   </div>
 </nav>
 
@@ -64,31 +63,24 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
   <!-- Header -->
-  <header class="w3-container"><h3><b>Assets ID Tool</b></h3></header>
+  <header class="w3-container"><h3><b>Mechanical Repository</b></h3></header>
 
 <div class="w3-container w3-padding-16 w3-teal">
-<h3>Device Identification</h3>
+<h3>Equipment Finder</h3>
 <div class="w3-row-padding-small">
   <div class="w3-quarter">
-    <select v-model="selectA" v-on:change="listItem()" class="w3-select" name="option">
+    <select v-model="selectM1" v-on:change="listItemsM()" class="w3-select" name="option">
     <option value="" disabled selected>System</option>
     <option value="1">Ventilation</option>
-    <option value="0">HTG</option>
-    <option value="0">CLG</option>
-    <option value="0">CWS</option>
-    <option value="2">Electrical</option>
-    <option value="3">Metering</option>
-    <option value="4">Lighting</option>
-    <option value="5">BMS</option>
-    <option value="6">AV/IT</option>
-    <option value="7">Fire</option>
-    <option value="8">Security</option>
+    <option value="2">Heating/Cooling</option>
+    <option value="3">Cold Water</option>
+    <option value="4">Gas</option>
     </select>
   </div>
   <div class="w3-quarter">
     <select v-model="selectB" class="w3-select" name="option">
     <option value="" disabled selected>Item</option>
-    <option v-for="item in list01">{{ item }}</option>
+    <option v-for="item in listM1">{{ item }}</option>
     </select>
   </div>
   <div class="w3-quarter">
