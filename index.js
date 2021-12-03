@@ -43,7 +43,7 @@ const app = Vue.createApp({
 
     methods: {
 	    
-     createTable() {
+     createTableM() {
 	     var table = new Tabulator("#mechanical-table", {
  	data:this.tabledataM,
  	layout:"fitColumns",
