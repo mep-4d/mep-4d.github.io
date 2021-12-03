@@ -99,6 +99,18 @@ const app = Vue.createApp({
             });    
 	    },
         
+       listItemsE() {
+            console.log("selectionEA");
+            var a = this.listsEA
+            var b = this.listsEB
+            var c = this.listsEC
+            var d = this.listsED
+            if (this.selectE1 == "1") {this.listE1 = a} 
+            else if (this.selectE1 == "2") {this.listE1 = b} 
+            else if (this.selectE1 == "3") {this.listE1 = c} 
+            else if (this.selectE1 == "4") {this.listE1 = d} 
+            },
+	    
         listItem() {
             console.log("selection");
             var a = this.listsA
