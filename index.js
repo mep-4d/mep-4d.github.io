@@ -54,8 +54,9 @@ const app = Vue.createApp({
             },
         listTypesM() {
             console.log("selection");
-	    if (this.selectM2.includes("Chill")) {this.listM2 = new Array("a","b","c")} 
-	    else if (this.selectM2.includes("Boil")) {this.listM2 = new Array("d","e","f")} 
+	    if (this.selectM2.includes("Boil")) {this.listM2 = new Array("d","e","f")}
+	    else if (this.selectM2.includes("Chil")) {this.listM2 = new Array("a","b","c")}
+	    else if (this.selectM2.includes("Cont")) {this.listM2 = new Array("PICV","DRV","DPCV")}
             },
         
         listItem() {
