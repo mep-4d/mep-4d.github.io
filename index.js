@@ -30,11 +30,11 @@ const app = Vue.createApp({
             ],
             resource   :"",
 	    tabledata : [
- 	    {id:1, name:"Oli Bob", age:"12", col:"red", dob:""},
- 	    {id:2, name:"Mary May", age:"1", col:"blue", dob:"14/05/1982"},
- 	    {id:3, name:"Christine Lobowski", age:"42", col:"green", dob:"22/05/1982"},
- 	    {id:4, name:"Brendon Philips", age:"125", col:"orange", dob:"01/08/1980"},
- 	    {id:5, name:"Margret Marmajuke", age:"16", col:"yellow", dob:"31/01/1999"},
+ 	    {a:1, b:"Oli Bob", c:"12", d:"red"},
+ 	    {a:2, b:"Mary May", c:"1", d:"blue"},
+ 	    {a:3, b:"Christine Lobowski", c:"42", d:"green"},
+ 	    {a:4, b:"Brendon Philips", c:"125", d:"orange"},
+ 	    {a:5, b:"Margret Marmajuke", c:"16", d:"yellow"},
             ]
         };
     },
@@ -49,10 +49,10 @@ const app = Vue.createApp({
  	data:this.tabledata,
  	layout:"fitColumns",
  	columns:[ //Define Table Columns
-	 	{title:"Name", field:"name", width:150},
-	 	{title:"Age", field:"age", hozAlign:"left", formatter:"progress"},
-	 	{title:"Favourite Color", field:"col"},
-	 	{title:"Date Of Birth", field:"dob", sorter:"date", hozAlign:"center"},
+	 	{title:"Manufacturer", field:"a"},
+	 	{title:"Part No.", field:"b"},
+	 	{title:"Description", field:"c"},
+	 	{title:"Commission", field:"d"},
  	        ],
             });    
 	    },
