@@ -50,7 +50,7 @@ const app = Vue.createApp({
             var a = this.listsMA
             var b = this.listsMB
             if (this.selectM1 == "1") {this.listM1 = a} 
-            else if (this.selectM1 == "2") {this.listM1} 
+            else if (this.selectM1 == "2") {this.listM1 = b} 
             },
         listTypesM() {
             console.log("selection");
