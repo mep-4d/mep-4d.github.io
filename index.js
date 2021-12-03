@@ -72,10 +72,11 @@ const app = Vue.createApp({
             else if (this.selectM1 == "4") {this.listM1 = d} 
             },
         listTypesM() {
-            console.log("selection");
-	    if (this.selectM2.includes("AHU")) { // selections for AHU
-		    this.listM2 = new Array("Large Modular","Medium Modular","Small Modular","Large packaged","Medium Packaged","Small Packaged")
-	    },
+            console.log("selectionMB");
+	    if (this.selectM2.includes("AHU")) {this.listM2 = new Array("Large Modular","Medium Modular","Small Modular","Large packaged","Medium Packaged","Small Packaged")},
+	    if (this.selectM2.includes("FCU")) {this.listM2 = new Array("2 Pipe VS","4 Pipe VS","AirSide","Multi-Zone","Packaged Controls")},
+	    if (this.selectM2.includes("VAV")) {this.listM2 = new Array("VAV Type 1","VAV Type 2")},
+	    if (this.selectM2.includes("Ext")) {this.listM2 = new Array("Fan Type 1","Fan Type 2")},
 	    else if (this.selectM2.includes("Boi")) {this.listM2 = new Array("d","e","f")}
 	    else if (this.selectM2.includes("Chi")) {this.listM2 = new Array("a","b","c")}
 	    else if (this.selectM2.includes("Val")) {this.listM2 = new Array("PICV","DRV","DPCV")}
