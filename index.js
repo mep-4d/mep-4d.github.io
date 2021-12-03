@@ -2,10 +2,12 @@ const app = Vue.createApp({
 
     data() {
         return {
+            selectM1   :"",
             selectA    :"",
             selectB    :"",
             selectC    :"",
             textInA    :"",
+            listM1     :[],
             list01     :[],
             listsA     :["AHU","FCU","VAV","Extract_Fan","Supply_Fan","Smoke_Fan","Boiler","Chiller","Pump","Valve","Commissioning_Point"],
             listsB     :["DB","Switch_Board","Socket_Outlet","Fused_Outlet","Isolator"],
@@ -36,6 +38,10 @@ const app = Vue.createApp({
 	        if (res.status === 201){console.log("success")} 
                 else{console.log("nah")}
             })
+            },
+	    
+        listItemM() {
+            console.log("selection");
             },
         
         listItem() {
