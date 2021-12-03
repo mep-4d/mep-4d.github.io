@@ -76,13 +76,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-third">
     <select v-model="selectM2" v-on:change="listTypesM()" class="w3-select" name="option">
-    <option value="" disabled selected>Item Type</option>
+    <option value="0" disabled selected>Item Type</option>
     <option v-for="item in listM1">{{ item }}</option>
     </select>
   </div>
   <div class="w3-third">
     <select v-model="selectM3" class="w3-select" name="option">
-    <option value="" disabled selected>Item Sub-Type</option>
+    <option value="0" disabled selected>Item Sub-Type</option>
     <option v-for="item in listM2">{{ item }}</option>
     </select>
   </div>
