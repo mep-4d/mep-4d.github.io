@@ -29,7 +29,7 @@ const app = Vue.createApp({
                 "3rd North","3rd East","3rd South","3rd West","4th North","4th East","4th South","4th West","5th North","5th East","5th South","5th West"
             ],
             resource   :"",
-	    tabledata : [
+	    tabledataM : [
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:""},
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:""},
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:""},
@@ -44,8 +44,8 @@ const app = Vue.createApp({
     methods: {
 	    
      createTable() {
-	     var table = new Tabulator("#example-table", {
- 	data:this.tabledata,
+	     var table = new Tabulator("#mechanical-table", {
+ 	data:this.tabledataM,
  	layout:"fitColumns",
  	columns:[ //Define Table Columns
 	 	{title:"Manufacturer", field:"a"},
