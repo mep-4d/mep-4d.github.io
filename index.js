@@ -4,6 +4,7 @@ const app = Vue.createApp({
         return {
             selectM1   :"",
             selectM2   :"",
+            selectM3   :"",
             selectA    :"",
             selectB    :"",
             selectC    :"",
