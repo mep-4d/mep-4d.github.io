@@ -2,19 +2,22 @@ const app = Vue.createApp({
 
     data() {
         return {
-            selectM1   :"",
-            selectM2   :"",
-            selectM3   :"",
+            selectM1:"", selectM2:"", selectM3:"",
             listsMA    :["AHU","FCU","VAV","Extract Fan","Supply Fan","Smoke Fan","MVHR","Smoke Damper","Control Damper","Air Diffuser","..."],
             listsMB    :["Boilers","Chillers","CHP","Control Valves","Pumps","Energy Meter","..."],
             listsMC    :["Booster Set","Tanks","Valves","Flow Meter","..."],
             listsMD    :["Valve","Booster","Valves","Gas Meter","..."],
+            listM1:[], listM2:[],
+            selectE1:"", selectE2:"", selectE3:"",
+            listsEA    :["...","...","..."],
+            listsEB    :["...","...","..."],
+            listsEC    :["...","...","..."],
+            listsED    :["...","...","..."],
+            listE1:[], listE2:[],
             selectA    :"",
             selectB    :"",
             selectC    :"",
             textInA    :"",
-            listM1     :[],
-            listM2     :[],
             list01     :[],
             listsA     :["AHU","FCU","VAV","Extract_Fan","Supply_Fan","Smoke_Fan","Boiler","Chiller","Pump","Valve","Commissioning_Point"],
             listsB     :["DB","Switch_Board","Socket_Outlet","Fused_Outlet","Isolator"],
@@ -46,24 +49,6 @@ const app = Vue.createApp({
     },
 
     methods: {
-	    
-     createTableM() {
-	     var table = new Tabulator("#mechanical-table", {
- 	data:this.tabledataM,
- 	layout:"fitColumns",
- 	columns:[ //Define Table Columns
-	 	{title:"Manufacturer", field:"a"},
-	 	{title:"Unit Code", field:"b"},
-	 	{title:"Description", field:"c"},
-	 	{title:"Features", field:"d"},
-	 	{title:"Commission", field:"e"},
-	 	{title:"Performance", field:"f"},
-	 	{title:"Life", field:"g"},
-	 	{title:"Cost", field:"h"},
-	 	{title:"Issues", field:"i"},
- 	        ],
-            });    
-	    },
         
         sendData() {
             fetch("https://api.apispreadsheets.com/data/20934/", {
@@ -90,12 +75,29 @@ const app = Vue.createApp({
             console.log("selection");
 	    if (this.selectM2.includes("AHU")) { // selections for AHU
 		    this.listM2 = new Array("Large Modular","Medium Modular","Small Modular","Large packaged","Medium Packaged","Small Packaged")
-	    }
+	    },
 	    else if (this.selectM2.includes("Boi")) {this.listM2 = new Array("d","e","f")}
 	    else if (this.selectM2.includes("Chi")) {this.listM2 = new Array("a","b","c")}
 	    else if (this.selectM2.includes("Val")) {this.listM2 = new Array("PICV","DRV","DPCV")}
 	    else if (this.selectM2.includes("Pum")) {this.listM2 = new Array("Small Pump","2 Pump Set","3 Pump Set")}
             },
+            createTableM() {
+	    var table = new Tabulator("#mechanical-table", {
+ 	    data:this.tabledataM,
+ 	    layout:"fitColumns",
+ 	    columns:[ //Define Table Columns
+	 	{title:"Manufacturer", field:"a"},
+	 	{title:"Unit Code", field:"b"},
+	 	{title:"Description", field:"c"},
+	 	{title:"Features", field:"d"},
+	 	{title:"Commission", field:"e"},
+	 	{title:"Performance", field:"f"},
+	 	{title:"Life", field:"g"},
+	 	{title:"Cost", field:"h"},
+	 	{title:"Issues", field:"i"},
+ 	        ],
+            });    
+	    },
         
         listItem() {
             console.log("selection");
