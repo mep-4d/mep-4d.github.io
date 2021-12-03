@@ -60,10 +60,13 @@ const app = Vue.createApp({
             },
         listTypesM() {
             console.log("selection");
-	    if (this.selectM2.includes("Boil")) {this.listM2 = new Array("d","e","f")}
-	    else if (this.selectM2.includes("Chil")) {this.listM2 = new Array("a","b","c")}
-	    else if (this.selectM2.includes("Valv")) {this.listM2 = new Array("PICV","DRV","DPCV")}
-	    else if (this.selectM2.includes("Pump")) {this.listM2 = new Array("Small Pump","2 Pump Set","3 Pump Set")}
+	    if (this.selectM2.includes("AHU")) { // selections for AHU
+		    this.listM2 = new Array("Large Modular","Medium Modular","Small Modular","Large packaged","Medium Packaged","Small Packaged")
+	    }
+	    else if (this.selectM2.includes("Boi")) {this.listM2 = new Array("d","e","f")}
+	    else if (this.selectM2.includes("Chi")) {this.listM2 = new Array("a","b","c")}
+	    else if (this.selectM2.includes("Val")) {this.listM2 = new Array("PICV","DRV","DPCV")}
+	    else if (this.selectM2.includes("Pum")) {this.listM2 = new Array("Small Pump","2 Pump Set","3 Pump Set")}
             },
         
         listItem() {
