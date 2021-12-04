@@ -49,17 +49,8 @@ const app = Vue.createApp({
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
             ],
 	    tabledataE :[
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
             ],
 	    tabledataC :[
- 	    //{a:"Trend", b:"IQX", c:"General Purpose Controller", d:"Native Niagara, FOX/S, WebServer, MQTT", e:"", f:"", g:"", h:"", i:"JobA worked well, 600 projects successfully"},
             ]
         };
     },
@@ -82,6 +73,7 @@ const app = Vue.createApp({
 		    var a = this.database
 		    var b = a.data.length
 		    var c = this.tabledataC.length
+		    while (c == 0) {
 		    for (var i = 0; i < b; i++) {
                     this.tabledataC.push(
                     {
@@ -96,6 +88,7 @@ const app = Vue.createApp({
                     i:a.data[i].paramI,
                     j:a.data[i].paramJ,
                     });
+		    }
 		    }
 		    console.log(a,b,c)
 		    this.createTableC()
