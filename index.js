@@ -73,7 +73,7 @@ const app = Vue.createApp({
 	    fetch("https://api.apispreadsheets.com/data/20934/").then(res=>{
 	    if (res.status === 200){
 		res.json().then(data=>{
-			this.database = data
+			this.database = new Array(data)
 			//this.database = yourData
 			//console.log(yourData)
 		}).catch(err => console.log(err))}else{console.log("nah")}
