@@ -93,7 +93,7 @@ const app = Vue.createApp({
                                     }
 		}).catch(err => console.log(err))}else{console.log("nah")}
             })
-		    createTableC()
+		    this.createTableC()
 		    var a = this.database
 		    console.log(a)
             },
