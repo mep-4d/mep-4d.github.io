@@ -74,28 +74,28 @@ const app = Vue.createApp({
 	    if (res.status === 200){
 		res.json().then(data=>{
 			const yourData = data
-			this.database = data
-			console.log(yourData)
-			            for (var i = 0; i < yourData.length; i++) {
-                                    this.tabledataC.push(
-                                    {
-                                    a:yourData[i].paramA,
-                                    b:yourData[i].paramB,
-                                    c:yourData[i].paramC,
-                                    d:yourData[i].paramD,
-                                    e:yourData[i].paramE,
-                                    f:yourData[i].paramF,
-                                    g:yourData[i].paramG,
-                                    h:yourData[i].paramH,
-                                    i:yourData[i].paramI,
-                                    j:yourData[i].paramJ,
-                                    });
-                                    }
+			this.database = yourData
+			//console.log(yourData)
 		}).catch(err => console.log(err))}else{console.log("nah")}
             })
 		    this.createTableC()
 		    var a = this.database
 		    console.log(a)
+		    	            //for (var i = 0; i < yourData.length; i++) {
+                                    //this.tabledataC.push(
+                                    //{
+                                    //a:yourData[i].paramA,
+                                    //b:yourData[i].paramB,
+                                    //c:yourData[i].paramC,
+                                    //d:yourData[i].paramD,
+                                    //e:yourData[i].paramE,
+                                    //f:yourData[i].paramF,
+                                    //g:yourData[i].paramG,
+                                    //h:yourData[i].paramH,
+                                    //i:yourData[i].paramI,
+                                    //j:yourData[i].paramJ,
+                                    //});
+                                    //}
             },
         
             sendData() {
