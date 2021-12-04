@@ -99,7 +99,7 @@ const app = Vue.createApp({
 		    this.createTableC()
 		    var a = this.database
 		    console.log(a)
-	    }
+	    },
         
             sendData() {
             fetch("https://api.apispreadsheets.com/data/20934/", {
