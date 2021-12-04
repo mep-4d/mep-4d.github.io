@@ -2,7 +2,7 @@
 <html>
 <head>
     
-<title>MSI Tool</title>
+<title>Smart Design Tool</title>
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 <script src="https://unpkg.com/vue@next"></script>
-
+    
 <link href="https://unpkg.com/tabulator-tables@4.9.3/dist/css/tabulator.min.css" rel="stylesheet">
 <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script>
     
@@ -28,8 +28,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-indigo w3-large" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right"><b>Project Nexus</b></span>
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right"><b>Controls Data</b></span>
 </div>
 
 <!-- Sidebar/menu -->
@@ -50,10 +50,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h5>Menu</h5>
   </div>
   <div class="w3-bar-block">
-    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="/index" class="w3-bar-item w3-button w3-padding"><i class="fa fa-plug"></i>  Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-clipboard"></i>  Testing</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-wrench"></i>  Onboarding</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="/index" class="w3-bar-item w3-button w3-padding"><i class="fa fa-home"></i>  Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-clipboard"></i>  Page 2</a>
   </div>
 </nav>
 
@@ -64,89 +63,43 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
   <!-- Header -->
-  <header class="w3-container"><h3><b>Assets ID Tool</b></h3></header>
+  <header class="w3-container"><h3><b>Controls Repository</b></h3></header>
 
 <div class="w3-container w3-padding-16 w3-teal">
-<h3>Device Identification</h3>
+<h3>Equipment Finder</h3>
 <div class="w3-row-padding-small">
-  <div class="w3-quarter">
-    <select v-model="selectA" v-on:change="listItem()" class="w3-select" name="option">
+  <div class="w3-third">
+    <select v-model="selectC1" v-on:change="listItemsC()" class="w3-select" name="optionA">
     <option value="" disabled selected>System</option>
-    <option value="1">Ventilation</option>
-    <option value="0">HTG</option>
-    <option value="0">CLG</option>
-    <option value="0">CWS</option>
-    <option value="2">Electrical</option>
-    <option value="3">Metering</option>
-    <option value="4">Lighting</option>
-    <option value="5">BMS</option>
-    <option value="6">AV/IT</option>
-    <option value="7">Fire</option>
-    <option value="8">Security</option>
+    <option value="1">Controllers</option>
+    <option value="2">Output Peripherals</option>
+    <option value="3">Input Peripherals</option>
+    <option value="4">Gateways</option>
     </select>
   </div>
-  <div class="w3-quarter">
-    <select v-model="selectB" class="w3-select" name="option">
-    <option value="" disabled selected>Item</option>
-    <option v-for="item in list01">{{ item }}</option>
+  <div class="w3-third">
+    <select v-model="selectC2" v-on:change="listTypesC()" class="w3-select" name="optionB">
+    <option value="" disabled selected>Item Type</option>
+    <option v-for="item in listC1">{{ item }}</option>
     </select>
   </div>
-  <div class="w3-quarter">
-    <select v-model="selectC" class="w3-select" name="option">
-    <option value="" disabled selected>Location</option>
-    <option v-for="item in locate">{{ item }}</option>
+  <div class="w3-third">
+    <select v-model="selectC3" class="w3-select" name="optionC">
+    <option value="" disabled selected>Item Sub-Type</option>
+    <option v-for="item in listC2">{{ item }}</option>
     </select>
-  </div>
-  <div class="w3-quarter">
-      <div class="w3-container">
-         <input v-on:input="inputA($event)" class="w3-input w3-border" type="text" placeholder="input Identifier">
-      </div>
   </div>
 </div>
-</div>
+</div>    
     
 <div class="w3-container w3-padding-16 w3-teal">
-    <button v-on:click="sendData()" class="w3-button w3-ripple w3-red">Reset Selection</button>
-    <button v-on:click="identifyA()" class="w3-button w3-ripple w3-green">Get ID</button>
-    <h3>Result: {{resource}}</h3>
+    <button v-on:click="resetM()" class="w3-button w3-ripple w3-red">Reset</button>
+    <button v-on:click="createTableC()" class="w3-button w3-ripple w3-green">Search</button>
 </div>
 
-    <hr>
-    
-<div class="w3-container w3-padding-16 w3-teal">
-<h3>Point Identification</h3>
-<div class="w3-row-padding-small">
-  <div class="w3-third">
-    <select v-model="selectA" class="w3-select" name="option">
-    <option value="" disabled selected>Equipment Type?</option>
-    <option value="1">Desk</option>
-    <option value="2">Meeting Room</option>
-    <option value="3">Conference Room</option>
-    </select>
-  </div>
-  <div class="w3-third">
-    <select v-model="selectB" class="w3-select" name="option">
-    <option value="" disabled selected>Inputs/Outputs?</option>
-    <option value="1">First floor</option>
-    <option value="2">Second floor</option>
-    <option value="3">Third Floor</option>
-    </select>
-  </div>
-  <div class="w3-third">
-    <select v-model="selectC" class="w3-select" name="option">
-    <option value="" disabled selected>Point Type?</option>
-    <option value="1">1/2 hour</option>
-    <option value="2">1 hour</option>
-    <option value="3">1.5 hours</option>
-    <option value="4">2 hours</option>
-    </select>
-  </div>
-</div>
-</div>
-
-<div class="w3-container w3-padding-16 w3-teal">
-    <button v-on:click="reset()" class="w3-button w3-ripple w3-red">Reset Selection</button>
-    <button v-on:click="find()" class="w3-button w3-ripple w3-green">Get ID</button>
+<div class="w3-container w3-padding-16 w3-dark-gray">
+<h3>Equipment Data</h3>
+<div id="controls-table"></div>
 </div>
 
 
