@@ -70,7 +70,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-row-padding-small">
   <div class="w3-third">
     <select v-model="selectC1" v-on:change="listItemsC()" class="w3-select" name="optionA">
-    <option value="" disabled selected>System</option>
+    <option value="" disabled selected>System Element</option>
     <option value="1">Controllers</option>
     <option value="2">Output Peripherals</option>
     <option value="3">Input Peripherals</option>
@@ -79,13 +79,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-third">
     <select v-model="selectC2" v-on:change="listTypesC()" class="w3-select" name="optionB">
-    <option value="" disabled selected>Item Type</option>
+    <option value="" disabled selected>Element Type</option>
     <option v-for="item in listC1">{{ item }}</option>
     </select>
   </div>
   <div class="w3-third">
     <select v-model="selectC3" class="w3-select" name="optionC">
-    <option value="" disabled selected>Item Sub-Type</option>
+    <option value="" disabled selected>Element Sub-Type</option>
     <option v-for="item in listC2">{{ item }}</option>
     </select>
   </div>
