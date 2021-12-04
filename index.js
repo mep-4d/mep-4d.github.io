@@ -78,9 +78,6 @@ const app = Vue.createApp({
 			//console.log(yourData)
 		}).catch(err => console.log(err))}else{console.log("nah")}
             })
-		    this.createTableC()
-		    var a = this.database
-		    console.log(a)
 		    	            //for (var i = 0; i < yourData.length; i++) {
                                     //this.tabledataC.push(
                                     //{
@@ -97,6 +94,12 @@ const app = Vue.createApp({
                                     //});
                                     //}
             },
+	    
+	    testFunc() {
+		    this.createTableC()
+		    var a = this.database
+		    console.log(a)
+	    }
         
             sendData() {
             fetch("https://api.apispreadsheets.com/data/20934/", {
