@@ -37,7 +37,7 @@ const app = Vue.createApp({
                 "B3","B2","B1","Gnd North","Gnd East","Gnd South","Gnd West","1st North","1st East","1st South","1st West","2nd North","2nd East","2nd South","2nd West",
                 "3rd North","3rd East","3rd South","3rd West","4th North","4th East","4th South","4th West","5th North","5th East","5th South","5th West"
             ],
-            resource   :"",
+            database   :[],
 	    tabledataM : [
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
@@ -74,6 +74,7 @@ const app = Vue.createApp({
 	    if (res.status === 200){
 		res.json().then(data=>{
 			const yourData = data
+			this.database = data
 			console.log(yourData)
 			            for (var i = 0; i < yourData.length; i++) {
                                     this.tabledataC.push(
@@ -91,8 +92,10 @@ const app = Vue.createApp({
                                     });
                                     }
 		}).catch(err => console.log(err))}else{console.log("nah")}
-		    createTableC()
             })
+		    createTableC()
+		    var a = this.database
+		    console.log(a)
             },
         
             sendData() {
