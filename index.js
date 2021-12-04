@@ -78,26 +78,26 @@ const app = Vue.createApp({
 			//console.log(yourData)
 		}).catch(err => console.log(err))}else{console.log("nah")}
             })
-		    	            //for (var i = 0; i < yourData.length; i++) {
-                                    //this.tabledataC.push(
-                                    //{
-                                    //a:yourData[i].paramA,
-                                    //b:yourData[i].paramB,
-                                    //c:yourData[i].paramC,
-                                    //d:yourData[i].paramD,
-                                    //e:yourData[i].paramE,
-                                    //f:yourData[i].paramF,
-                                    //g:yourData[i].paramG,
-                                    //h:yourData[i].paramH,
-                                    //i:yourData[i].paramI,
-                                    //j:yourData[i].paramJ,
-                                    //});
-                                    //}
             },
 	    
 	    testFunc() {
 		    var a = this.database
 		    //this.tabledataC = a
+		    for (var i = 0; i < a.data.length; i++) {
+                    this.tabledataC.push(
+                    {
+                    a:a.data[i].paramA,
+                    b:a.data[i].paramB,
+                    c:a.data[i].paramC,
+                    d:a.data[i].paramD,
+                    e:a.data[i].paramE,
+                    f:a.data[i].paramF,
+                    g:a.data[i].paramG,
+                    h:a.data[i].paramH,
+                    i:a.data[i].paramI,
+                    j:a.data[i].paramJ,
+                    });
+                    }
 		    console.log(a.data)
 		    console.log(typeof(a))
 		    console.log(a.data.length)
