@@ -86,7 +86,7 @@ const app = Vue.createApp({
             })
             },
 	    
-       listItemsM() {
+            listItemsM() {
             console.log("selectionMA");
             var a = this.listsMA
             var b = this.listsMB
@@ -97,7 +97,7 @@ const app = Vue.createApp({
             else if (this.selectM1 == "3") {this.listM1 = c} 
             else if (this.selectM1 == "4") {this.listM1 = d} 
             },
-        listTypesM() {
+            listTypesM() {
             console.log("selectionMB");
 	    if (this.selectM2.includes("AHU")) {this.listM2 = new Array("Large Modular","Medium Modular","Small Modular","Large packaged","Medium Packaged","Small Packaged")};
 	    if (this.selectM2.includes("FCU")) {this.listM2 = new Array("2 Pipe VS","4 Pipe VS","AirSide","Multi-Zone","Packaged Controls")};
@@ -126,7 +126,7 @@ const app = Vue.createApp({
             });    
 	    },
         
-       listItemsE() {
+            listItemsE() {
             console.log("selectionEA");
             var a = this.listsEA
             var b = this.listsEB
@@ -137,6 +137,58 @@ const app = Vue.createApp({
             else if (this.selectE1 == "3") {this.listE1 = c} 
             else if (this.selectE1 == "4") {this.listE1 = d} 
             },
+            listTypesE() {
+            console.log("selectionEB");
+            },
+            createTableE() {
+	    var table = new Tabulator("#electrical-table", {
+ 	    data:this.tabledataE,
+ 	    layout:"fitColumns",
+ 	    columns:[ //Define Table Columns
+	 	{title:"Manufacturer", field:"a"},
+	 	{title:"Unit Code", field:"b"},
+	 	{title:"Description", field:"c"},
+	 	{title:"Features", field:"d"},
+	 	{title:"Commission", field:"e"},
+	 	{title:"Performance", field:"f"},
+	 	{title:"Life", field:"g"},
+	 	{title:"Cost", field:"h"},
+	 	{title:"Issues", field:"i"},
+ 	        ],
+            });    
+	    },
+	    
+            listItemsC() {
+            console.log("selectionCA");
+            var a = this.listsCA
+            var b = this.listsCB
+            var c = this.listsCC
+            var d = this.listsCD
+            if (this.selectC1 == "1") {this.listC1 = a} 
+            else if (this.selectC1 == "2") {this.listC1 = b} 
+            else if (this.selectC1 == "3") {this.listC1 = c} 
+            else if (this.selectC1 == "4") {this.listC1 = d} 
+            },
+            listTypesC() {
+            console.log("selectionCB");
+            },
+            createTableC() {
+	    var table = new Tabulator("#controls-table", {
+ 	    data:this.tabledataC,
+ 	    layout:"fitColumns",
+ 	    columns:[ //Define Table Columns
+	 	{title:"Manufacturer", field:"a"},
+	 	{title:"Unit Code", field:"b"},
+	 	{title:"Description", field:"c"},
+	 	{title:"Features", field:"d"},
+	 	{title:"Commission", field:"e"},
+	 	{title:"Performance", field:"f"},
+	 	{title:"Life", field:"g"},
+	 	{title:"Cost", field:"h"},
+	 	{title:"Issues", field:"i"},
+ 	        ],
+            });    
+	    },
 	    
         listItem() {
             console.log("selection");
