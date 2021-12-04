@@ -38,7 +38,7 @@ const app = Vue.createApp({
                 "3rd North","3rd East","3rd South","3rd West","4th North","4th East","4th South","4th West","5th North","5th East","5th South","5th West"
             ],
             database   :[],
-	    tabledataM : [
+	    tabledataM :[
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
@@ -48,7 +48,7 @@ const app = Vue.createApp({
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
             ],
-	    tabledataE : [
+	    tabledataE :[
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
@@ -58,7 +58,7 @@ const app = Vue.createApp({
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
             ],
-	    tabledataC : [
+	    tabledataC :[
  	    //{a:"Trend", b:"IQX", c:"General Purpose Controller", d:"Native Niagara, FOX/S, WebServer, MQTT", e:"", f:"", g:"", h:"", i:"JobA worked well, 600 projects successfully"},
             ]
         };
@@ -73,8 +73,8 @@ const app = Vue.createApp({
 	    fetch("https://api.apispreadsheets.com/data/20934/").then(res=>{
 	    if (res.status === 200){
 		res.json().then(data=>{
-			const yourData = data
-			this.database = yourData
+			this.database = data
+			//this.database = yourData
 			//console.log(yourData)
 		}).catch(err => console.log(err))}else{console.log("nah")}
             })
@@ -96,7 +96,7 @@ const app = Vue.createApp({
             },
 	    
 	    testFunc() {
-		    this.createTableC()
+		    //this.createTableC()
 		    var a = this.database
 		    console.log(a)
 	    },
