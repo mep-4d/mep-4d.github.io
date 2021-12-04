@@ -59,14 +59,7 @@ const app = Vue.createApp({
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
             ],
 	    tabledataC : [
- 	    {a:"Trend", b:"IQX", c:"General Purpose Controller", d:"Native Niagara, FOX/S, WebServer, MQTT", e:"", f:"", g:"", h:"", i:"JobA worked well, 600 projects successfully"},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
- 	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
+ 	    //{a:"Trend", b:"IQX", c:"General Purpose Controller", d:"Native Niagara, FOX/S, WebServer, MQTT", e:"", f:"", g:"", h:"", i:"JobA worked well, 600 projects successfully"},
             ]
         };
     },
@@ -82,6 +75,21 @@ const app = Vue.createApp({
 		res.json().then(data=>{
 			const yourData = data
 			console.log(yourData)
+			            for (var i = 0; i < yourData.length; i++) {
+                                    this.tabledataC.push(
+                                    {
+                                    a:yourData[i].paramA,
+                                    b:yourData[i].paramB,
+                                    c:yourData[i].paramC,
+                                    d:yourData[i].paramD,
+                                    e:yourData[i].paramE,
+                                    f:yourData[i].paramF,
+                                    g:yourData[i].paramG,
+                                    h:yourData[i].paramH,
+                                    i:yourData[i].paramI,
+                                    j:yourData[i].paramJ,
+                                    });
+                                    }
 		}).catch(err => console.log(err))}else{console.log("nah")}
             })
             },
