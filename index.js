@@ -96,9 +96,10 @@ const app = Vue.createApp({
             },
 	    
 	    testFunc() {
-		    //this.createTableC()
 		    var a = this.database
+		    this.tabledataC = a
 		    console.log(a)
+		    this.createTableC()
 	    },
         
             sendData() {
