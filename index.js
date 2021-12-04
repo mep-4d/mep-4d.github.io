@@ -101,7 +101,7 @@ const app = Vue.createApp({
 		    console.log(a.data)
 		    console.log(typeof(a))
 		    console.log(a.data.length)
-		    //this.createTableC()
+		    this.createTableC()
 	    },
         
             sendData() {
