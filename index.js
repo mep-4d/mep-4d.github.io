@@ -59,7 +59,7 @@ const app = Vue.createApp({
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
             ],
 	    tabledataC : [
- 	    {a:"Trend", b:"IQX", c:"General Purpose Controller", d:"Native Niagara, FOX/S, WebServer, MQTT", e:"", f:"", g:"", h:"", i:""},
+ 	    {a:"Trend", b:"IQX", c:"General Purpose Controller", d:"Native Niagara, FOX/S, WebServer, MQTT", e:"", f:"", g:"", h:"", i:"JobA worked well, 600 projects successfully"},
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
@@ -178,14 +178,14 @@ const app = Vue.createApp({
  	    layout:"fitColumns",
  	    columns:[ //Define Table Columns
 	 	{title:"Manufacturer", field:"a"},
-	 	{title:"Unit Code", field:"b"},
+	 	{title:"Product Code", field:"b"},
 	 	{title:"Description", field:"c"},
 	 	{title:"Features", field:"d", formatter:"textarea"},
-	 	{title:"Commission", field:"e"},
+	 	{title:"Engineering", field:"e"},
 	 	{title:"Performance", field:"f"},
-	 	{title:"Life", field:"g"},
+	 	{title:"Reliability", field:"g"},
 	 	{title:"Cost", field:"h"},
-	 	{title:"Issues", field:"i"},
+	 	{title:"Real World", field:"i", formatter:"textarea"},
  	        ],
             });    
 	    },
