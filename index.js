@@ -75,8 +75,18 @@ const app = Vue.createApp({
     },
 
     methods: {
+	    
+            getData() {
+	    fetch("https://api.apispreadsheets.com/data/20934/").then(res=>{
+	    if (res.status === 200){
+		res.json().then(data=>{
+			const yourData = data
+			console.log(yourData)
+		}).catch(err => console.log(err))}else{console.log("nah")}
+            })
+            },
         
-        sendData() {
+            sendData() {
             fetch("https://api.apispreadsheets.com/data/20934/", {
 	        method: "POST",
 	        body: JSON.stringify({"data": {"paramA":"a","paramB":"b","paramC":"c","paramD":"d","paramE":"e","paramF":"f","paramG":"g","paramH":"h","paramI":"i","paramJ":"j"}}),
@@ -209,28 +219,10 @@ const app = Vue.createApp({
             else if (this.selectA == "7") {this.list01 = g; console.log("fir selected")}
             else if (this.selectA == "8") {this.list01 = h; console.log("sec selected")} 
             },
-        
         inputA(event) {
             this.textInA = event.target.value;
             },
         
-        identifyA() {
-	    fetch("https://api.apispreadsheets.com/data/20934/").then(res=>{
-	    if (res.status === 200){
-		res.json().then(data=>{
-			const yourData = data
-			console.log(yourData)
-		}).catch(err => console.log(err))}else{console.log("nah")}
-            })
-            var a = this.selectA
-            var str
-            if(a==1){str=="mec"}else if(a==2){str=="lec"}else if(a==3){str=="met"}else if(a==4){str=="ltg"}else if(a==5){str=="bms"}else if(a==6){str=="avt"}else if(a==7){str=="fre"}else if(a==8){str=="sec"};
-            var b = this.selectB
-            var c = this.selectC
-            var d = this.textInA
-            var e = str +"_"+ b +"_"+ c +"_"+ d
-            this.resource = e
-            }
     }
    
 });
