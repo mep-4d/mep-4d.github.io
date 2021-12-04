@@ -97,10 +97,10 @@ const app = Vue.createApp({
 	    
 	    testFunc() {
 		    var a = this.database
-		    this.tabledataC = a
-		    console.log(a)
+		    //this.tabledataC = a
+		    console.log(a.data)
 		    console.log(typeof(a))
-		    console.log(a.length)
+		    console.log(a.data.length)
 		    //this.createTableC()
 	    },
         
