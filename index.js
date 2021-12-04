@@ -90,6 +90,7 @@ const app = Vue.createApp({
                                     j:yourData[i].paramJ,
                                     });
                                     }
+			console.log(this.tabledataC)
 		}).catch(err => console.log(err))}else{console.log("nah")}
             })
             },
