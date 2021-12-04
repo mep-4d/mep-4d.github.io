@@ -79,27 +79,25 @@ const app = Vue.createApp({
             },
 	    
 	    testFunc() {
-		    var a = this.database.data
-		    var b = a.length
+		    var a = this.database
+		    var b = a.data.length
 		    var c = this.tabledataC.length
-		    if (c == undefined) {
 		    for (var i = 0; i < b; i++) {
                     this.tabledataC.push(
                     {
-                    a:a[i].paramA,
-                    b:a[i].paramB,
-                    c:a[i].paramC,
-                    d:a[i].paramD,
-                    e:a[i].paramE,
-                    f:a[i].paramF,
-                    g:a[i].paramG,
-                    h:a[i].paramH,
-                    i:a[i].paramI,
-                    j:a[i].paramJ,
+                    a:a.data[i].paramA,
+                    b:a.data[i].paramB,
+                    c:a.data[i].paramC,
+                    d:a.data[i].paramD,
+                    e:a.data[i].paramE,
+                    f:a.data[i].paramF,
+                    g:a.data[i].paramG,
+                    h:a.data[i].paramH,
+                    i:a.data[i].paramI,
+                    j:a.data[i].paramJ,
                     });
 		    }
-		    }
-		    console.log(a,b)
+		    console.log(a,b,c)
 		    this.createTableC()
 	    },
         
