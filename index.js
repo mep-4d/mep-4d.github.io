@@ -73,6 +73,7 @@ const app = Vue.createApp({
 		    var a = this.database
 		    var b = a.data.length
 		    var c = this.tabledataC.length
+		    if (c == 0) {
 		    for (var i = 0; i < b; i++) {
                     this.tabledataC.push(
                     {
@@ -87,6 +88,7 @@ const app = Vue.createApp({
                     i:a.data[i].paramI,
                     j:a.data[i].paramJ,
                     });
+		    }
 		    }
 		    console.log(a,b,c)
 		    this.createTableC()
