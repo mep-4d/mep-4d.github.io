@@ -94,8 +94,9 @@ const app = Vue.createApp({
 	    
 	    test() {
 		    var a = this.database
-		    var b = this.tabledataC
-		    console.log(a, b)
+		    var b = a.data
+		    var c = this.tabledataC
+		    console.log(a, b, c)
 	    },
         
             sendData() {
