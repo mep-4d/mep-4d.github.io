@@ -66,7 +66,6 @@ const app = Vue.createApp({
 		res.json().then(data=>{
 			this.database = data
 		})//.catch(err => console.log(err))}else{console.log("nah")}
-	        })
                 })
             },
 	    
