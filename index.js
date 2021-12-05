@@ -67,6 +67,7 @@ const app = Vue.createApp({
 			this.database = data
 		})//.catch(err => console.log(err))}else{console.log("nah")}
                 })
+            console.log("getting data from g-drive")
             },
 	    
 	    compile() {
