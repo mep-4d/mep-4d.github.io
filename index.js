@@ -76,8 +76,8 @@ const app = Vue.createApp({
 		    var c = this.tabledataC.length
 		    if (c == 0) {
 		    for (var i = 0; i < b; i++) {
-                    this.tabledataC.push(
-                    {
+	            if (a.data[i].paramJ.includes("bms")) {
+                    this.tabledataC.push({
                     a:a.data[i].paramA,
                     b:a.data[i].paramB,
                     c:a.data[i].paramC,
@@ -87,8 +87,8 @@ const app = Vue.createApp({
                     g:a.data[i].paramG,
                     h:a.data[i].paramH,
                     i:a.data[i].paramI,
-                    j:a.data[i].paramJ,
                     });
+		    }
 		    }
 		    }
 		    this.createTableC()
