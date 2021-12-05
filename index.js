@@ -69,7 +69,7 @@ const app = Vue.createApp({
             })
             },
 	    
-	    testFunc() {
+	    compile() {
 		    var a = this.database
 		    var b = a.data.length
 		    var c = this.tabledataC.length
@@ -90,6 +90,12 @@ const app = Vue.createApp({
 		    }
 		    console.log(a,b,c)
 		    this.createTableC()
+	    },
+	    
+	    test() {
+		    var a = this.database
+		    var b = this.tabledataC
+		    console.log(a, b)
 	    },
         
             sendData() {
