@@ -90,7 +90,6 @@ const app = Vue.createApp({
                     });
 		    }
 		    }
-		    console.log(a,b,c)
 		    this.createTableC()
 	    },
 	    
