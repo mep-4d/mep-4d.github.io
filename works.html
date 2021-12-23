@@ -68,24 +68,23 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-container w3-padding-16 w3-teal">
 <h3>Works Search</h3>
 <div class="w3-row-padding-small">
-  <div class="w3-third">
-    <select v-model="selectM1" v-on:change="listWorksA()" class="w3-select" name="optionA">
+  <div class="w3-half">
+    <select v-model="selectW1" v-on:change="listWorksA()" class="w3-select" name="optionA">
     <option value="" disabled selected>Job Type</option>
     <option value="1">Reactive Works</option>
     <option value="2">Preventative Works</option>
     <option value="3">Scheduled Works</option>
     </select>
   </div>
-  <div class="w3-third">
-    <select v-model="selectM2" v-on:change="listWorksB()" class="w3-select" name="optionB">
-    <option value="" disabled selected>Item Type</option>
-    <option v-for="item in listM1">{{ item }}</option>
-    </select>
-  </div>
-  <div class="w3-third">
-    <select v-model="selectM3" class="w3-select" name="optionC">
-    <option value="" disabled selected>Item Sub-Type</option>
-    <option v-for="item in listM2">{{ item }}</option>
+  <div class="w3-half">
+    <select v-model="selectW2" v-on:change="listWorksB()" class="w3-select" name="optionA">
+    <option value="" disabled selected>System</option>
+    <option value="1">Electrical</option>
+    <option value="2">Heating</option>
+    <option value="3">Cooling</option>
+    <option value="4">CWS</option>
+    <option value="5">Waste</option>
+    <option value="6">Primary Air</option>
     </select>
   </div>
 </div>
