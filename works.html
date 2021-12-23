@@ -70,7 +70,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-row-padding-small">
   <div class="w3-half">
     <select v-model="selectW1" v-on:change="listWorksA()" class="w3-select" name="optionA">
-    <option value="." disabled selected>Job Type</option>
+    <option value="" disabled selected>Job Type</option>
     <option value="0">All Works</option>
     <option value="1">Reactive Works</option>
     <option value="2">Preventative Works</option>
@@ -79,7 +79,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-half">
     <select v-model="selectW2" v-on:change="listWorksB()" class="w3-select" name="optionA">
-    <option value="." disabled selected>MEP System</option>
+    <option value="" disabled selected>MEP System</option>
     <option value="1">Electrical</option>
     <option value="2">Heating</option>
     <option value="3">Cooling</option>
