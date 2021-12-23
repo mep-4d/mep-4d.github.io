@@ -103,7 +103,7 @@ const app = Vue.createApp({
 	    test() {
 		    var a = this.database
 		    var b = a.data
-		    var c = this.tabledataC
+		    var c = this.tabledataW
 		    console.log(a, b, c)
 	    },
         
