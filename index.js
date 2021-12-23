@@ -53,6 +53,8 @@ const app = Vue.createApp({
 	    tabledataC :[
             ],
             selectW1:"", selectW2:"", selectW3:"",
+	    tabledataW :[
+            ],
         };
     },
 
@@ -238,6 +240,20 @@ const app = Vue.createApp({
         inputA(event) {
             this.textInA = event.target.value;
             },
+	    
+            createTableW() {
+	    var table = new Tabulator("#works-table", {
+ 	    data:this.tabledataW,
+ 	    layout:"fitColumns",
+ 	    columns:[ //Define Table Columns
+	 	{title:"System", field:"a"},
+	 	{title:"Works", field:"b"},
+	 	{title:"Date Required", field:"c"},
+	 	{title:"Date Occurred", field:"d"},
+	 	{title:"Assigned To", field:"e"},
+ 	        ],
+            });    
+	    },
         
     }
    
