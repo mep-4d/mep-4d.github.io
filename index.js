@@ -54,6 +54,7 @@ const app = Vue.createApp({
             ],
             selectW1:"", selectW2:"", selectW3:"",
 	    tabledataW :[
+            {a:"", b:"", c:"", d:"", e:"}
             ],
         };
     },
@@ -243,6 +244,9 @@ const app = Vue.createApp({
 	    
             createTableW() {
 	    var table = new Tabulator("#works-table", {
+            rowClick:function(e, row){
+            console.log("CLICKED YO")
+            },
  	    data:this.tabledataW,
  	    layout:"fitColumns",
  	    columns:[ //Define Table Columns
