@@ -51,7 +51,8 @@ const app = Vue.createApp({
 	    tabledataE :[
             ],
 	    tabledataC :[
-            ]
+            ],
+            selectW1:"", selectW2:"", selectW3:"",
         };
     },
 
