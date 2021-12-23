@@ -247,7 +247,7 @@ const app = Vue.createApp({
 	    
 	compileW() {
 	    var a = this.database
-	    var b = a.data.length
+	    var b = this.database.data.length
             var c = this.tabledataW.length
 		    if (c == 0) {
 		    for (var i = 0; i < b; i++) {
