@@ -54,7 +54,7 @@ const app = Vue.createApp({
             ],
             selectW1:"", selectW2:"", selectW3:"",
 	    tabledataW :[
-            {a:"", b:"", c:"", d:"", e:"}
+            {a:"", b:"", c:"", d:"", e:""}
             ],
         };
     },
