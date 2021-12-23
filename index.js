@@ -274,9 +274,9 @@ const app = Vue.createApp({
  	    layout:"fitColumns",
  	    columns:[ //Define Table Columns
 	 	{title:"System", field:"a"},
-	 	{title:"Works", field:"b"},
-	 	{title:"Date Required", field:"c"},
-	 	{title:"Date Occurred", field:"d"},
+	 	{title:"Works Required", field:"b", formatter:"textarea", width:250},
+	 	{title:"Date Logged", field:"c"},
+	 	{title:"Date Required", field:"d"},
 	 	{title:"Assigned To", field:"e"},
  	        ],
             });    
