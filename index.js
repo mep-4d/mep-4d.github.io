@@ -54,9 +54,9 @@ const app = Vue.createApp({
             ],
             selectW1:"", selectW2:"", selectW3:"",
 	    tabledataW :[
-            {a:"", b:"", c:"", d:"", e:""},
-            {a:"", b:"", c:"", d:"", e:""},
-            {a:"", b:"", c:"", d:"", e:""}
+            //{a:"", b:"", c:"", d:"", e:""},
+            //{a:"", b:"", c:"", d:"", e:""},
+            //{a:"", b:"", c:"", d:"", e:""}
             ],
         };
     },
@@ -259,6 +259,26 @@ const app = Vue.createApp({
 	 	{title:"Assigned To", field:"e"},
  	        ],
             });    
+	    },
+	    compileW() {
+	    var a = this.database
+	    var b = a.data.length
+            var c = this.tabledataW.length
+		    if (c == 0) {
+		    for (var i = 0; i < b; i++) {
+                    this.tabledataW.push({
+                    a:a.data[i].paramA,
+                    b:a.data[i].paramB,
+                    c:a.data[i].paramC,
+                    d:a.data[i].paramD,
+                    e:a.data[i].paramE,
+                    f:a.data[i].paramF,
+                    g:a.data[i].paramG,
+                    h:a.data[i].paramH,
+                    i:a.data[i].paramI,
+                    });
+		    }}
+		    this.createTableW()
 	    },
         
     }
