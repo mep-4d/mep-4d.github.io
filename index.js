@@ -244,23 +244,8 @@ const app = Vue.createApp({
             this.textInA = event.target.value;
             },
 	    
-            createTableW() {
-	    var table = new Tabulator("#works-table", {
-            rowClick:function(e, row){
-            console.log("CLICKED YO", e, row)
-            },
- 	    data:this.tabledataW,
- 	    layout:"fitColumns",
- 	    columns:[ //Define Table Columns
-	 	{title:"System", field:"a"},
-	 	{title:"Works", field:"b"},
-	 	{title:"Date Required", field:"c"},
-	 	{title:"Date Occurred", field:"d"},
-	 	{title:"Assigned To", field:"e"},
- 	        ],
-            });    
-	    },
-	    compileW() {
+	    
+	compileW() {
 	    var a = this.database
 	    var b = a.data.length
             var c = this.tabledataW.length
@@ -279,6 +264,22 @@ const app = Vue.createApp({
                     });
 		    }}
 		    this.createTableW()
+	    },
+        createTableW() {
+	    var table = new Tabulator("#works-table", {
+            rowClick:function(e, row){
+            console.log("CLICKED YO", e, row)
+            },
+ 	    data:this.tabledataW,
+ 	    layout:"fitColumns",
+ 	    columns:[ //Define Table Columns
+	 	{title:"System", field:"a"},
+	 	{title:"Works", field:"b"},
+	 	{title:"Date Required", field:"c"},
+	 	{title:"Date Occurred", field:"d"},
+	 	{title:"Assigned To", field:"e"},
+ 	        ],
+            });    
 	    },
         
     }
