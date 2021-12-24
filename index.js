@@ -58,7 +58,7 @@ const app = Vue.createApp({
             //{a:"", b:"", c:"", d:"", e:""},
             //{a:"", b:"", c:"", d:"", e:""}
             ],
-	    visibleW1  :true
+	    visibleW1  :false
         };
     },
 
@@ -272,6 +272,7 @@ const app = Vue.createApp({
             console.log("CLICKED YO")
 		    console.log(row._row.cells[0].value)
 		    console.log(row._row.cells[2].value)
+		    this.visibleW1 = true;
             },
  	    data:this.tabledataW,
  	    layout:"fitColumns",
