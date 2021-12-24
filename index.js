@@ -106,7 +106,8 @@ const app = Vue.createApp({
 		    var a = this.database
 		    var b = a.data
 		    var c = this.tabledataW
-		    console.log(a, b, c)
+		    var d = this.joblist
+		    console.log(d)
 	    },
         
             sendData() {
