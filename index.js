@@ -58,7 +58,8 @@ const app = Vue.createApp({
             //{a:"", b:"", c:"", d:"", e:""},
             //{a:"", b:"", c:"", d:"", e:""}
             ],
-	    visibleW1  :false
+	    visibleW1  :false,
+	    joblist    :[]
         };
     },
 
@@ -270,9 +271,10 @@ const app = Vue.createApp({
 	    var table = new Tabulator("#works-table", {
             rowClick:function(e, row){
             console.log("CLICKED YO")
-		    console.log(row._row.cells[0].value)
-		    console.log(row._row.cells[2].value)
+		    a = row._row.cells[0].value;
+		    b = row._row.cells[2].value;
 		    this.visibleW1 = true;
+		    this.joblist.push(a, b)
             },
  	    data:this.tabledataW,
  	    layout:"fitColumns",
