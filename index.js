@@ -271,10 +271,10 @@ const app = Vue.createApp({
 	    var table = new Tabulator("#works-table", {
             rowClick:function(e, row){
             console.log("CLICKED YO")
-		    a = row._row.cells[0].value;
-		    b = row._row.cells[2].value;
+		    //a = row._row.cells[0].value;
+		    //b = row._row.cells[2].value;
 		    this.visibleW1 = true;
-		    this.joblist.push(a, b)
+		    this.joblist.push(row._row.cells[0].value, row._row.cells[2].value)
             },
  	    data:this.tabledataW,
  	    layout:"fitColumns",
