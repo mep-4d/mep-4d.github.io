@@ -271,15 +271,15 @@ const app = Vue.createApp({
             rowClick:function(e, row){
             console.log("CLICKED YO")
 		    console.log(row._row.cells[0].value)
+		    console.log(row._row.cells[2].value)
             },
  	    data:this.tabledataW,
  	    layout:"fitColumns",
  	    columns:[ //Define Table Columns
 	 	{title:"System", field:"a"},
-	 	{title:"Works Required", field:"b", formatter:"textarea", width:250},
-	 	{title:"Date Logged", field:"c"},
-	 	{title:"Date Required", field:"d"},
-	 	{title:"Assigned To", field:"e"},
+	 	{title:"Works Required", field:"b"},
+	 	{title:"Issue Logged", field:"c"},
+	 	{title:"Date Logged", field:"d"},
  	        ],
             });    
 	    },
