@@ -58,7 +58,7 @@ const app = Vue.createApp({
             //{a:"", b:"", c:"", d:"", e:""},
             //{a:"", b:"", c:"", d:"", e:""}
             ],
-	    visible    :true
+	    visibleW1  :true
         };
     },
 
