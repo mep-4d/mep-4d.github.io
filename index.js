@@ -269,8 +269,8 @@ const app = Vue.createApp({
         createTableW() {
 	    var table = new Tabulator("#works-table", {
             rowClick:function(e, row){
-            console.log("CLICKED YO", e, row)
-		    console.log(row.r._row.cells[0])
+            console.log("CLICKED YO")
+		    console.log(row)
             },
  	    data:this.tabledataW,
  	    layout:"fitColumns",
