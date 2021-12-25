@@ -284,7 +284,7 @@ const app = Vue.createApp({
 	 	{title:"Issue Logged", field:"c"},
 	 	{title:"Date Logged", field:"d"},
  	        ],
-            });    
+            }),    
 	test() {console.log("this worked")}
 	    },
         
