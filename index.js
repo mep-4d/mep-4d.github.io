@@ -107,7 +107,8 @@ const app = Vue.createApp({
 		    var b = a.data
 		    var c = this.tabledataW
 		    var d = this.joblist
-		    console.log(d)
+		    var e = this.visibleW1
+		    console.log(d, e)
 	    },
         
             sendData() {
@@ -270,12 +271,12 @@ const app = Vue.createApp({
 	    },
         createTableW() {
 	    var table = new Tabulator("#works-table", {
-	    self:this,
+	    //self:this,
             rowClick:function(e, row){
-		    var a = self.joblist
-		    console.log(a)
+		    //var a = self.joblist
+		    //console.log(a)
                     //this.joblist = new Array(row._row.cells[0].value, row._row.cells[2].value)
-		    self.visibleW1 = true;
+		    this.visibleW1 = true;
             },
  	    data:this.tabledataW,
  	    layout:"fitColumns",
