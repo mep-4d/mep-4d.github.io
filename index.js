@@ -76,6 +76,7 @@ const app = Vue.createApp({
 		})//.catch(err => console.log(err))}else{console.log("nah")}
                 })
             console.log("getting data from g-drive")
+            setTimeout(this.compileW, 5000)
             },
 	    
 	    compile() {
