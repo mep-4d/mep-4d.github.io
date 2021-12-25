@@ -286,7 +286,7 @@ const app = Vue.createApp({
  	        ],
             }),    
 	test() {console.log("this worked")}
-	    },
+	    }
         
     }
    
