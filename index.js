@@ -275,6 +275,7 @@ const app = Vue.createApp({
             rowClick:function(e, row){
                     self.joblist.push(row._row.cells[0].value, row._row.cells[2].value);
 		    self.visibleW1 = true;
+		    self.detailWork()
             },
  	    data:this.tabledataW,
  	    layout:"fitColumns",
@@ -285,6 +286,9 @@ const app = Vue.createApp({
 	 	{title:"Date Logged", field:"d"},
  	        ],
             });    
+	    },
+	    
+	detailWork() {
 	    }
         
     }
