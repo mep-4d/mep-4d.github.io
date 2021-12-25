@@ -270,7 +270,7 @@ const app = Vue.createApp({
 	    },
         createTableW() {
 	    var table = new Tabulator("#works-table", {
-	    self = this
+	    
             rowClick:function(e, row){
 		    var a = self.joblist
 		    console.log(a)
