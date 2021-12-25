@@ -59,7 +59,8 @@ const app = Vue.createApp({
             //{a:"", b:"", c:"", d:"", e:""}
             ],
 	    visibleW1  :false,
-	    joblist    :[]
+	    joblist    :[],
+	    job        :""
         };
     },
 
@@ -290,6 +291,8 @@ const app = Vue.createApp({
 	    },
 	    
 	detailWork() {
+	    var selected = this.joblist[0];
+	    this.job = selected;
 	    }
         
     }
