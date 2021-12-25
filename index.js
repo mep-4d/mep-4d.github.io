@@ -277,7 +277,8 @@ const app = Vue.createApp({
             rowClick:function(e, row){
                     self.joblist.push(row._row.cells[0].value, row._row.cells[2].value);
 		    self.visibleW1 = true;
-		    self.detailWork()
+		    self.detailWork();
+		    console.log("table clicked")
             },
  	    data:this.tabledataW,
  	    layout:"fitColumns",
