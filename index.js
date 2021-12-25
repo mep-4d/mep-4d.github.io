@@ -272,9 +272,7 @@ const app = Vue.createApp({
         createTableW() {
 	    var table = new Tabulator("#works-table", {
             rowClick:function(e, row){
-		    //console.log(a)
-                    //this.joblist = new Array(row._row.cells[0].value, row._row.cells[2].value)
-		    this.test()
+                    console.log(row._row.cells[0].value, row._row.cells[2].value)
             },
  	    data:this.tabledataW,
  	    layout:"fitColumns",
@@ -285,7 +283,6 @@ const app = Vue.createApp({
 	 	{title:"Date Logged", field:"d"},
  	        ],
             });    
-	    test:function() {console.log("this worked")}
 	    }
         
     }
