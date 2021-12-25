@@ -271,7 +271,8 @@ const app = Vue.createApp({
 	    },
         createTableW() {
 	    var table = new Tabulator("#works-table", {
-            rowClick:function(e, row){
+            //rowClick:function(e, row){
+            rowClick = (e, row) => {
                     console.log(row._row.cells[0].value, row._row.cells[2].value)
             },
  	    data:this.tabledataW,
