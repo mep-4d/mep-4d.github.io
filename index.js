@@ -285,6 +285,7 @@ const app = Vue.createApp({
 	 	{title:"Date Logged", field:"d"},
  	        ],
             });    
+	test() {console.log("this worked")}
 	    },
         
     }
