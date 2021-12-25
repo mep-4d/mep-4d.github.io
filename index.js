@@ -273,7 +273,7 @@ const app = Vue.createApp({
 	    var self = this;
 	    var table = new Tabulator("#works-table", {
             rowClick:function(e, row){
-                    console.log(row._row.cells[0].value, row._row.cells[2].value);
+                    self.joblist.push(row._row.cells[0].value, row._row.cells[2].value);
 		    self.visibleW1 = true;
             },
  	    data:this.tabledataW,
