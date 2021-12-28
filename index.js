@@ -77,13 +77,13 @@ const app = Vue.createApp({
 		})//.catch(err => console.log(err))}else{console.log("nah")}
                 })
             console.log("getting data from g-drive")
-            setTimeout(this.compileW, 3000)
+            setTimeout(this.compileW, 4000)
             },
 	    
 	    listWorksA() {
 	    console.log(this.selectW1)
+	    this.createTableW()
 	    },
-	    
 	    compileW() {
 	    var a = this.database
 	    var b = this.database.data.length
@@ -124,7 +124,6 @@ const app = Vue.createApp({
  	        ],
             });    
 	    },
-	    
 	    detailWork() {
 	    var selected = this.joblist[0];
 	    this.job = selected;
