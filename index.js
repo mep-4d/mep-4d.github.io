@@ -77,9 +77,10 @@ const app = Vue.createApp({
 		})//.catch(err => console.log(err))}else{console.log("nah")}
                 })
             console.log("getting data from g-drive")
-            setTimeout(this.compileW, 5000)
+            //setTimeout(this.compileW, 5000)
             },
-	    
+	    listWorksA() {
+	    console.log(this.selectW1)
 	    compile() {
 		    var a = this.database
 		    var b = a.data.length
