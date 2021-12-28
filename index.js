@@ -83,6 +83,7 @@ const app = Vue.createApp({
 	    listWorksA() {
 	    var a = this.selectW1
 	    if (a === "1") {this.createTableW1()}
+	    if (a === "2") {this.createTableW2()}
 	    },
 	    compileW() {
 	    var a = this.database
@@ -112,7 +113,6 @@ const app = Vue.createApp({
                     self.joblist = new Array(row._row.cells[0].value, row._row.cells[2].value);
 		    self.visibleW1 = true;
 		    self.detailWork();
-		    console.log("table clicked")
             },
  	    data:this.tabledataW,
  	    layout:"fitColumns",
@@ -121,6 +121,24 @@ const app = Vue.createApp({
 	 	{title:"Works Required", field:"b"},
 	 	{title:"Issue Logged", field:"c"},
 	 	{title:"Date Logged", field:"d"},
+ 	        ],
+            });    
+	    },
+	    
+	    createTableW2() {
+	    var self = this;
+	    var table = new Tabulator("#works-table", {
+            rowClick:function(e, row){
+                    self.joblist = new Array(row._row.cells[0].value, row._row.cells[2].value);
+		    self.visibleW1 = true;
+		    self.detailWork();
+            },
+ 	    data:this.tabledataW,
+ 	    layout:"fitColumns",
+ 	    columns:[ //Define Table Columns
+	 	{title:"System", field:"a"},
+	 	{title:"Works", field:"b"},
+	 	{title:"Scheduled Date", field:"e"},
  	        ],
             });    
 	    },
