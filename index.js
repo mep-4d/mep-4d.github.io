@@ -267,9 +267,10 @@ const app = Vue.createApp({
                     g:a.data[i].paramG,
                     h:a.data[i].paramH,
                     i:a.data[i].paramI,
+                    j:a.data[i].paramJ,
                     });
 		    }}
-		    this.createTableW()
+		    //this.createTableW()
 	    },
         createTableW() {
 	    var self = this;
