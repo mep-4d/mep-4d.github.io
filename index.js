@@ -79,8 +79,57 @@ const app = Vue.createApp({
             console.log("getting data from g-drive")
             //setTimeout(this.compileW, 5000)
             },
+	    
 	    listWorksA() {
 	    console.log(this.selectW1)
+	    },
+	    
+	    compileW() {
+	    var a = this.database
+	    var b = this.database.data.length
+            var c = this.tabledataW.length
+		    if (c == 0) {
+		    for (var i = 0; i < b; i++) {
+                    this.tabledataW.push({
+                    a:a.data[i].paramA,
+                    b:a.data[i].paramB,
+                    c:a.data[i].paramC,
+                    d:a.data[i].paramD,
+                    e:a.data[i].paramE,
+                    f:a.data[i].paramF,
+                    g:a.data[i].paramG,
+                    h:a.data[i].paramH,
+                    i:a.data[i].paramI,
+                    j:a.data[i].paramJ,
+                    });
+		    }}
+		    //this.createTableW()
+	    },
+            createTableW() {
+	    var self = this;
+	    var table = new Tabulator("#works-table", {
+            rowClick:function(e, row){
+                    self.joblist = new Array(row._row.cells[0].value, row._row.cells[2].value);
+		    self.visibleW1 = true;
+		    self.detailWork();
+		    console.log("table clicked")
+            },
+ 	    data:this.tabledataW,
+ 	    layout:"fitColumns",
+ 	    columns:[ //Define Table Columns
+	 	{title:"System", field:"a"},
+	 	{title:"Works Required", field:"b"},
+	 	{title:"Issue Logged", field:"c"},
+	 	{title:"Date Logged", field:"d"},
+ 	        ],
+            });    
+	    },
+	    
+	    detailWork() {
+	    var selected = this.joblist[0];
+	    this.job = selected;
+	    },
+	    
 	    compile() {
 		    var a = this.database
 		    var b = a.data.length
@@ -249,54 +298,7 @@ const app = Vue.createApp({
             },
         inputA(event) {
             this.textInA = event.target.value;
-            },
-	    
-	    
-	compileW() {
-	    var a = this.database
-	    var b = this.database.data.length
-            var c = this.tabledataW.length
-		    if (c == 0) {
-		    for (var i = 0; i < b; i++) {
-                    this.tabledataW.push({
-                    a:a.data[i].paramA,
-                    b:a.data[i].paramB,
-                    c:a.data[i].paramC,
-                    d:a.data[i].paramD,
-                    e:a.data[i].paramE,
-                    f:a.data[i].paramF,
-                    g:a.data[i].paramG,
-                    h:a.data[i].paramH,
-                    i:a.data[i].paramI,
-                    j:a.data[i].paramJ,
-                    });
-		    }}
-		    //this.createTableW()
-	    },
-        createTableW() {
-	    var self = this;
-	    var table = new Tabulator("#works-table", {
-            rowClick:function(e, row){
-                    self.joblist = new Array(row._row.cells[0].value, row._row.cells[2].value);
-		    self.visibleW1 = true;
-		    self.detailWork();
-		    console.log("table clicked")
-            },
- 	    data:this.tabledataW,
- 	    layout:"fitColumns",
- 	    columns:[ //Define Table Columns
-	 	{title:"System", field:"a"},
-	 	{title:"Works Required", field:"b"},
-	 	{title:"Issue Logged", field:"c"},
-	 	{title:"Date Logged", field:"d"},
- 	        ],
-            });    
-	    },
-	    
-	detailWork() {
-	    var selected = this.joblist[0];
-	    this.job = selected;
-	    }
+            }
         
     }
    
