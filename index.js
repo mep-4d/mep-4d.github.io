@@ -81,8 +81,8 @@ const app = Vue.createApp({
             },
 	    
 	    listWorksA() {
-	    console.log(this.selectW1)
-	    this.createTableW()
+	    var a = this.selectW1
+	    if (a === "1") {this.createTableW1()}
 	    },
 	    compileW() {
 	    var a = this.database
@@ -105,7 +105,7 @@ const app = Vue.createApp({
 		    }}
 		    //this.createTableW()
 	    },
-            createTableW() {
+            createTableW1() {
 	    var self = this;
 	    var table = new Tabulator("#works-table", {
             rowClick:function(e, row){
@@ -124,6 +124,7 @@ const app = Vue.createApp({
  	        ],
             });    
 	    },
+	    
 	    detailWork() {
 	    var selected = this.joblist[0];
 	    this.job = selected;
