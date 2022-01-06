@@ -72,24 +72,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-quarter">
     <select v-model="selectS1" v-on:change="listItem()" class="w3-select" name="option">
     <option value="" disabled selected>System</option>
-    <option value="1">Ventilation</option>
-    <option value="0">HTG</option>
-    <option value="0">CLG</option>
-    <option value="0">CWS</option>
-    <option value="2">Electrical</option>
-    <option value="3">Metering</option>
-    <option value="4">Lighting</option>
-    <option value="5">BMS</option>
-    <option value="6">AV/IT</option>
-    <option value="7">Fire</option>
-    <option value="8">Security</option>
+    <option value="1">BMS</option>
+    <option value="2">Lighting</option>
+    <option value="3">Security</option>
+    <option value="4">Lifts</option>
+    <option value="5">AV</option>
     </select>
   </div>
   <div class="w3-quarter">
-    <select v-model="selectS2" class="w3-select" name="option">
-    <option value="" disabled selected>Item</option>
-    <option v-for="item in list01">{{ item }}</option>
-    </select>
+      <p><label>Device Name</label><input v-model="selectS2"class="w3-input w3-border w3-round" name="first" type="text"></p>
+      <p><label>Device GUID</label><input v-model="selectS3"class="w3-input w3-border w3-round" name="first" type="text"></p>
   </div>
   <div class="w3-quarter">
     <select v-model="selectS3" class="w3-select" name="option">
