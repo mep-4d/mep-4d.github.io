@@ -21,7 +21,7 @@ const app = Vue.createApp({
             listsCD    :["...","...","..."],
             listC1:[], listC2:[],
             selectS1   :"", selectS2   :"", selectS3   :"",
-            textInA    :"",
+            textInS1   :"",
             list01     :[],
             listsA     :["AHU","FCU","VAV","Extract_Fan","Supply_Fan","Smoke_Fan","Boiler","Chiller","Pump","Valve","Commissioning_Point"],
             listsB     :["DB","Switch_Board","Socket_Outlet","Fused_Outlet","Isolator"],
@@ -312,8 +312,8 @@ const app = Vue.createApp({
             else if (this.selectA == "7") {this.list01 = g; console.log("fir selected")}
             else if (this.selectA == "8") {this.list01 = h; console.log("sec selected")} 
             },
-        inputA(event) {
-            this.textInA = event.target.value;
+        inputS1(event) {
+            this.textInS1 = event.target.value;
             }
         
     }
