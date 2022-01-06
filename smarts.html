@@ -82,8 +82,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       </div>
   </div>
   <div class="w3-quarter">
-      <p><label>Device Name</label><input v-model="selectS2"class="w3-input w3-border w3-round" name="first" type="text"></p>
-      <p><label>Device GUID</label><input v-model="selectS3"class="w3-input w3-border w3-round" name="first" type="text"></p>
+      <div class="w3-card">
+         <p><label>Device Name</label><input v-model="selectS2"class="w3-input w3-border w3-round" name="first" type="text"></p>
+         <p><label>Device GUID</label><input v-model="selectS3"class="w3-input w3-border w3-round" name="first" type="text"></p>
+      </div>
   </div>
   <div class="w3-quarter">
     <select v-model="selectS3" class="w3-select" name="option">
