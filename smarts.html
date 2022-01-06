@@ -66,9 +66,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Header -->
   <header class="w3-container"><h3><b>Assets ID Tool</b></h3></header>
 
-<div class="w3-container w3-padding-16 w3-teal">
-<h3>Device Qualification</h3>
-  <div class="w3-container">
+<div class="w3-card-4">
+     <div class="w3-container w3-teal">
+     <h3>Device Qualification</h3>
+    </div>
+       <div class="w3-container">
        <select v-model="selectS1" v-on:change="listItem()" class="w3-select" name="option">
        <option value="" disabled selected>System</option>
        <option value="1">BMS</option>
@@ -77,17 +79,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
        <option value="4">Lifts</option>
        <option value="5">AV</option>
        </select>
-  </div>
-      <div class="w3-card-4">
+    </div>
+      <div class="w3-container">
          <p><label>Device Name</label><input v-model="selectS2"class="w3-input w3-border w3-round" name="first" type="text"></p>
          <p><label>Device GUID</label><input v-model="selectS3"class="w3-input w3-border w3-round" name="first" type="text"></p>
       </div>
-  <div class="w3-quarter">
-    <select v-model="selectS3" class="w3-select" name="option">
-    <option value="" disabled selected>Location</option>
-    <option v-for="item in locate">{{ item }}</option>
-    </select>
-  </div>
       <div class="w3-container">
          <input v-on:input="inputS1($event)" class="w3-input w3-border" type="text" placeholder="input Identifier">
       </div>
