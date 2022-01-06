@@ -72,7 +72,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
        <div class="w3-container w3-padding-16">
        <select v-model="selectS1" v-on:change="listItem()" class="w3-select" name="option">
-       <option value="" disabled selected>System</option>
+       <option value="" disabled selected>Select System</option>
        <option value="1">BMS</option>
        <option value="2">Lighting</option>
        <option value="3">Security</option>
@@ -81,8 +81,17 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
        </select>
     </div>
       <div class="w3-container">
-         <p><label>Device Name</label><input v-model="selectS2"class="w3-input w3-border w3-round" name="first" type="text"></p>
-         <p><label>Device GUID</label><input v-model="selectS3"class="w3-input w3-border w3-round" name="first" type="text"></p>
+         <div class="w3-row-padding-small">
+            <div class="w3-third">
+               <p><label>Device Name</label><input v-model="selectS2"class="w3-input w3-border w3-round" name="first" type="text"></p>
+            </div>
+            <div class="w3-third">
+               <p><label>Device GUID</label><input v-model="selectS3"class="w3-input w3-border w3-round" name="first" type="text"></p>
+            </div>
+            <div class="w3-third">
+
+            </div>
+          </div>
       </div>
       <div class="w3-container">
          <input v-on:input="inputS1($event)" class="w3-input w3-border" type="text" placeholder="input Identifier">
