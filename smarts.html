@@ -70,14 +70,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <h3>Device Identification</h3>
 <div class="w3-row-padding-small">
   <div class="w3-quarter">
-    <select v-model="selectS1" v-on:change="listItem()" class="w3-select" name="option">
-    <option value="" disabled selected>System</option>
-    <option value="1">BMS</option>
-    <option value="2">Lighting</option>
-    <option value="3">Security</option>
-    <option value="4">Lifts</option>
-    <option value="5">AV</option>
-    </select>
+      <div class="w3-card">
+       <select v-model="selectS1" v-on:change="listItem()" class="w3-select" name="option">
+       <option value="" disabled selected>System</option>
+       <option value="1">BMS</option>
+       <option value="2">Lighting</option>
+       <option value="3">Security</option>
+       <option value="4">Lifts</option>
+       <option value="5">AV</option>
+       </select>
+      </div>
   </div>
   <div class="w3-quarter">
       <p><label>Device Name</label><input v-model="selectS2"class="w3-input w3-border w3-round" name="first" type="text"></p>
