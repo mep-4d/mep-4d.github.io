@@ -59,7 +59,7 @@ const app = Vue.createApp({
 	    visibleW1  :false,
 	    joblist    :[],
 	    job        :"",
-            msgRecvd   :{a:"", b:""}
+            msgRecvd   :{a:"", b:"", c:""}
         };
     },
 
