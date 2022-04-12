@@ -67,7 +67,7 @@ const app = Vue.createApp({
             hLastRcvd() {
             var msgRecvd = this.msgRecvd
             if (typeof msgRecvd === 'string') return 'Last Message Received = ' + msgRecvd
-            else return 'Last Message Received = ' + this.syntaxHighlight(msgRecvd)
+            else return 'Nothbound Data Object = ' + this.syntaxHighlight(msgRecvd)
         }
     },
 
