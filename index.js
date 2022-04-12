@@ -229,14 +229,14 @@ const app = Vue.createApp({
             },
             listTypesM() {
             console.log("selectionMB");
-	    if (this.selectM2.includes("AHU")) {this.listM2 = new Array("Large Modular","Medium Modular","Small Modular","Large packaged","Medium Packaged","Small Packaged")};
-	    if (this.selectM2.includes("FCU")) {this.listM2 = new Array("2 Pipe VS","4 Pipe VS","AirSide","Multi-Zone","Packaged Controls")};
-	    if (this.selectM2.includes("VAV")) {this.listM2 = new Array("VAV Type 1","VAV Type 2")};
-	    if (this.selectM2.includes("Ext")) {this.listM2 = new Array("Fan Type 1","Fan Type 2")};
-	    if (this.selectM2.includes("Boi")) {this.listM2 = new Array("d","e","f")}
-	    if (this.selectM2.includes("Chi")) {this.listM2 = new Array("a","b","c")}
-	    if (this.selectM2.includes("Val")) {this.listM2 = new Array("PICV","DRV","DPCV")}
-	    if (this.selectM2.includes("Pum")) {this.listM2 = new Array("Small Pump","2 Pump Set","3 Pump Set")}
+	    if (this.selectM2.includes("VMA")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    if (this.selectM2.includes("FCU")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    if (this.selectM2.includes("VAV")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    if (this.selectM2.includes("Ext")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    if (this.selectM2.includes("Boi")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    if (this.selectM2.includes("Chi")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    if (this.selectM2.includes("Val")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    if (this.selectM2.includes("Pum")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
             },
             createTableM() {
 	    var table = new Tabulator("#mechanical-table", {
