@@ -3,10 +3,10 @@ const app = Vue.createApp({
     data() {
         return {
             selectM1:"", selectM2:"", selectM3:"",
-            listsMA    :["AHU","FCU","VAV","Extract Fan","Supply Fan","Smoke Fan","MVHR","Smoke Damper","Control Damper","Air Diffuser","..."],
-            listsMB    :["Boilers","Chillers","CHP","Control Valves","Pumps","Energy Meter","..."],
-            listsMC    :["Booster Set","Tanks","Valves","Flow Meter","..."],
-            listsMD    :["Valve","Booster","Valves","Gas Meter","..."],
+            listsMA    :["VMA","VMB","VMC","VMD","VME"],
+            listsMB    :["HMA","HMB","HMC","HMD","HME"],
+            listsMC    :["CMA","CMB","CMC","CMD","CME"],
+            listsMD    :["ZMA","ZMB","ZMC","ZMD","ZME"],
             listM1:[], listM2:[],
             selectE1:"", selectE2:"", selectE3:"",
             listsEA    :["...","...","..."],
