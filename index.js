@@ -59,16 +59,16 @@ const app = Vue.createApp({
 	    visibleW1  :false,
 	    joblist    :[],
 	    job        :"",
-            msgCtrl    :'[Nothing]'
+            msgRecvd   :'[Nothing]'
         };
     },
 
     computed: {
-	    hLastCtrlRcvd() {
-            var msgCtrl = this.msgCtrl
-            if (typeof msgCtrl === 'string') return 'Last Control Message Received = ' + msgCtrl
-            else return 'Last Control Message Received = ' + this.syntaxHighlight(msgCtrl)
-        },
+            hLastRcvd() {
+            var msgRecvd = this.msgRecvd
+            if (typeof msgRecvd === 'string') return 'Last Message Received = ' + msgRecvd
+            else return 'Last Message Received = ' + this.syntaxHighlight(msgRecvd)
+        }
     },
 
     methods: {
