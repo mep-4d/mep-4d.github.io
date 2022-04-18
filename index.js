@@ -327,7 +327,7 @@ const app = Vue.createApp({
             var f = this.listsF
             var g = this.listsG
             var h = this.listsH
-            if (this.selectNA == "1") {this.list01 = a; console.log("bms selected")} 
+            if (this.selectNA == "1") {this.listN1 = a; console.log("bms selected")} 
             else if (this.selectNA == "2") {this.listN1 = b; console.log("pms selected")} 
             else if (this.selectNA == "3") {this.listN1 = c; console.log("ems selected")} 
             else if (this.selectNA == "4") {this.listN1 = d; console.log("htg selected")}
