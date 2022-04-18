@@ -24,14 +24,6 @@ const app = Vue.createApp({
             listC1:[], listC2:[],
             selectS1   :"", selectS2   :"", selectS3   :"",
             textInS1   :"",
-            listsA     :[],
-            listsB     :[],
-            listsC     :[],
-            listsD     :[],
-            listsE     :[],
-            listsF     :[],
-            listsG     :[],
-            listsH     :[],
             database   :[],
 	    tabledataM :[
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
@@ -320,10 +312,14 @@ const app = Vue.createApp({
         listSystemsN() {
             console.log("nameSelectionA");
             var a = ["Panel","Controller","I/O","Interface Screen","Interface Terminal","T Sensor Air","T Sensor Water","P Sensor Air","P Sensor Water","T Sensor Space"
-		     "Hum Sensor Space","AQ Sensor","T Stat Air","T Stat Water","Valve Actuator","Damper Actuator"];
-            var b = ["","","","","","","","","","","","","","",""]
-            var c = ["","","","","","","","","","","","","","",""]
-            var d = this.listsD
+		     "Hum Sensor Space","AQ Sensor","T Stat Air","T Stat Water","Control Valve","Valve Actuator","Damper Actuator","VSD"
+		    ]; //BMS ITEMS
+            var b = ["Panel","Switchboard","Dist Board","UPS","TX","MCB","ACB","MCCB","Surge Protection","Bus Coupler","Battery Charger","Generator",""
+		    ]; //PMS ITEMS
+            var c = ["Panel","Gateway","Serial Node",""
+		    ]; //EMS ITEMS
+            var d = ["Boiler","Pump","Valve","Radiator","Heater",""
+		    ]; //HTG ITEMS
             var e = this.listsE
             var f = this.listsF
             var g = this.listsG
