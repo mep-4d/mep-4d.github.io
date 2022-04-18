@@ -3,7 +3,7 @@ const app = Vue.createApp({
     data() {
         return {
             selectNA:"", selectNB:"", selectNC:"",
-            list01     :[],
+            listN1     :[],
             selectM1:"", selectM2:"", selectM3:"",
             listsMA    :["VMA","VMB","VMC","VMD","VME"],
             listsMB    :["HMA","HMB","HMC","HMD","HME"],
@@ -321,8 +321,8 @@ const app = Vue.createApp({
             });    
 	    },
 	    
-        listItem() {
-            console.log("selection");
+        listSystemsN() {
+            console.log("nameSelectionA");
             var a = this.listsA
             var b = this.listsB
             var c = this.listsC
@@ -331,14 +331,14 @@ const app = Vue.createApp({
             var f = this.listsF
             var g = this.listsG
             var h = this.listsH
-            if (this.selectA == "1") {this.list01 = a; console.log("mec selected")} 
-            else if (this.selectA == "2") {this.list01 = b; console.log("lec selected")} 
-            else if (this.selectA == "3") {this.list01 = c; console.log("mtr selected")} 
-            else if (this.selectA == "4") {this.list01 = d; console.log("ltg selected")}
-            else if (this.selectA == "5") {this.list01 = e; console.log("bms selected")} 
-            else if (this.selectA == "6") {this.list01 = f; console.log("avi selected")}
-            else if (this.selectA == "7") {this.list01 = g; console.log("fir selected")}
-            else if (this.selectA == "8") {this.list01 = h; console.log("sec selected")} 
+            if (this.selectA == "1") {this.list01 = a; console.log("bms selected")} 
+            else if (this.selectA == "2") {this.listN1 = b; console.log("pms selected")} 
+            else if (this.selectA == "3") {this.listN1 = c; console.log("ems selected")} 
+            else if (this.selectA == "4") {this.listN1 = d; console.log("hvc selected")}
+            else if (this.selectA == "5") {this.listN1 = e; console.log("ltg selected")} 
+            else if (this.selectA == "6") {this.listN1 = f; console.log("met selected")}
+            else if (this.selectA == "7") {this.listN1 = g; console.log("sec selected")}
+            else if (this.selectA == "8") {this.listN1 = h; console.log("lft selected")} 
             },
         inputS1(event) {
             this.textInS1 = event.target.value;
