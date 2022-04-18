@@ -24,18 +24,14 @@ const app = Vue.createApp({
             listC1:[], listC2:[],
             selectS1   :"", selectS2   :"", selectS3   :"",
             textInS1   :"",
-            listsA     :["AHU","FCU","VAV","Extract_Fan","Supply_Fan","Smoke_Fan","Boiler","Chiller","Pump","Valve","Commissioning_Point"],
-            listsB     :["DB","Switch_Board","Socket_Outlet","Fused_Outlet","Isolator"],
-            listsC     :["CHW_Thermal_Energy","LTHW_Thermal_Energy","Electricity","Water","Gas"],
-            listsD     :["Luminaire","Wall_Pad","LCM","PIR","Switch","LED_Fixture"],
-            listsE     :["Main_Enclosure","Enclosure","Terminal_Unit","Controller","I/O_Module","Translator","Sensor","Switch","Actuator","Network_Item"],
-            listsF     :["Main_Enclosure","Enclosure","Touch_Panel","Interface","Voice","TV","Speaker","Switch","Network_Item"],
-            listsG     :["Panel","Heat_Detector","Smoke_Detector","Alarm_Point","Relay Interface","Actuator","Vent","Network_Item"],
-            listsH     :["Panel","Intrusion_Detector","IR_Beam","Alarm_Point","Relay_Interface","Network_Item"],
-            locate     :[
-                "B3","B2","B1","Gnd North","Gnd East","Gnd South","Gnd West","1st North","1st East","1st South","1st West","2nd North","2nd East","2nd South","2nd West",
-                "3rd North","3rd East","3rd South","3rd West","4th North","4th East","4th South","4th West","5th North","5th East","5th South","5th West"
-            ],
+            listsA     :[],
+            listsB     :[],
+            listsC     :[],
+            listsD     :[],
+            listsE     :[],
+            listsF     :[],
+            listsG     :[],
+            listsH     :[],
             database   :[],
 	    tabledataM :[
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
@@ -339,6 +335,9 @@ const app = Vue.createApp({
             else if (this.selectA == "6") {this.listN1 = f; console.log("met selected")}
             else if (this.selectA == "7") {this.listN1 = g; console.log("sec selected")}
             else if (this.selectA == "8") {this.listN1 = h; console.log("lft selected")} 
+            else if (this.selectA == "9") {this.listN1 = g; console.log("av. selected")}
+            else if (this.selectA == "10") {this.listN1 = h; console.log("fir selected")} 
+            else if (this.selectA == "11") {this.listN1 = h; console.log("it. selected")} 
             },
         inputS1(event) {
             this.textInS1 = event.target.value;
