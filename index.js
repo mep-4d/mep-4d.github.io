@@ -330,14 +330,18 @@ const app = Vue.createApp({
             if (this.selectNA == "1") {this.list01 = a; console.log("bms selected")} 
             else if (this.selectNA == "2") {this.listN1 = b; console.log("pms selected")} 
             else if (this.selectNA == "3") {this.listN1 = c; console.log("ems selected")} 
-            else if (this.selectNA == "4") {this.listN1 = d; console.log("hvc selected")}
-            else if (this.selectNA == "5") {this.listN1 = e; console.log("ltg selected")} 
-            else if (this.selectNA == "6") {this.listN1 = f; console.log("met selected")}
-            else if (this.selectNA == "7") {this.listN1 = g; console.log("sec selected")}
-            else if (this.selectNA == "8") {this.listN1 = h; console.log("lft selected")} 
-            else if (this.selectNA == "9") {this.listN1 = g; console.log("av. selected")}
-            else if (this.selectNA == "10") {this.listN1 = h; console.log("fir selected")} 
-            else if (this.selectNA == "11") {this.listN1 = h; console.log("it. selected")} 
+            else if (this.selectNA == "4") {this.listN1 = d; console.log("htg selected")}
+            else if (this.selectNA == "5") {this.listN1 = e; console.log("clg selected")} 
+            else if (this.selectNA == "6") {this.listN1 = f; console.log("vnt selected")}
+            else if (this.selectNA == "7") {this.listN1 = g; console.log("ph. selected")}
+            else if (this.selectNA == "8") {this.listN1 = h; console.log("hvc selected")} 
+            else if (this.selectNA == "9") {this.listN1 = g; console.log("ltg selected")}
+            else if (this.selectNA == "10") {this.listN1 = h; console.log("met selected")} 
+            else if (this.selectNA == "11") {this.listN1 = h; console.log("sec selected")} 
+            else if (this.selectNA == "12") {this.listN1 = g; console.log("lft selected")}
+            else if (this.selectNA == "13") {this.listN1 = h; console.log("av. selected")} 
+            else if (this.selectNA == "14") {this.listN1 = h; console.log("fir selected")} 
+            else if (this.selectNA == "15") {this.listN1 = h; console.log("it. selected")} 
             },
         inputS1(event) {
             this.textInS1 = event.target.value;
