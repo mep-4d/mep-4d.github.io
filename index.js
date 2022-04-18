@@ -311,7 +311,7 @@ const app = Vue.createApp({
 	    
         listSystemsN() {
             console.log("nameSelectionA");
-            var a = ["Panel","Controller","I/O","Interface Screen","Interface Terminal","T Sensor Air","T Sensor Water","P Sensor Air","P Sensor Water","T Sensor Space"
+            var a = ["Panel","Controller","I/O","Interface Screen","Interface Terminal","T Sensor Air","T Sensor Water","P Sensor Air","P Sensor Water","T Sensor Space",
 		     "Hum Sensor Space","AQ Sensor","T Stat Air","T Stat Water","Control Valve","Valve Actuator","Damper Actuator","VSD"
 		    ]; //BMS ITEMS
             var b = ["Panel","Switchboard","Dist Board","UPS","TX","MCB","ACB","MCCB","Surge Protection","Bus Coupler","Battery Charger","Generator",""
