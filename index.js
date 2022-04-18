@@ -2,6 +2,7 @@ const app = Vue.createApp({
 
     data() {
         return {
+            selectNA:"", selectNB:"", selectNC:"",
             selectM1:"", selectM2:"", selectM3:"",
             listsMA    :["VMA","VMB","VMC","VMD","VME"],
             listsMB    :["HMA","HMB","HMC","HMD","HME"],
