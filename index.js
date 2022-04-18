@@ -4,7 +4,6 @@ const app = Vue.createApp({
         return {
             selectNA:"", selectNB:"", selectNC:"",
             listN1     :[],
-            optionsNa  :["Panel","Controller","I/O","Interface","T Sensor Air","T Sensor Water","Actuator","","","","","","","",""],
             selectM1:"", selectM2:"", selectM3:"",
             listsMA    :["VMA","VMB","VMC","VMD","VME"],
             listsMB    :["HMA","HMB","HMC","HMD","HME"],
@@ -320,7 +319,8 @@ const app = Vue.createApp({
 	    
         listSystemsN() {
             console.log("nameSelectionA");
-            var a = this.optionsNa;
+            var a = ["Panel","Controller","I/O","Interface Screen","Interface Terminal","T Sensor Air","T Sensor Water","P Sensor Air","P Sensor Water","T Sensor Space"
+		     "Hum Sensor Space","AQ Sensor","T Stat Air","T Stat Water","Valve Actuator","Damper Actuator"];
             var b = ["","","","","","","","","","","","","","",""]
             var c = ["","","","","","","","","","","","","","",""]
             var d = this.listsD
