@@ -319,7 +319,7 @@ const app = Vue.createApp({
 	    
         listSystemsN() {
             console.log("nameSelectionA");
-            var a = ["","","","","","","","","","","","","","",""]
+            var a = ["Panel","Controller","I/O","Interface","T Sensor Air","T Sensor Water","Actuator","","","","","","","",""]
             var b = ["","","","","","","","","","","","","","",""]
             var c = ["","","","","","","","","","","","","","",""]
             var d = this.listsD
