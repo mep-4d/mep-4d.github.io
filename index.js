@@ -3,6 +3,7 @@ const app = Vue.createApp({
     data() {
         return {
             selectNA:"", selectNB:"", selectNC:"",
+            list01     :[],
             selectM1:"", selectM2:"", selectM3:"",
             listsMA    :["VMA","VMB","VMC","VMD","VME"],
             listsMB    :["HMA","HMB","HMC","HMD","HME"],
@@ -23,7 +24,6 @@ const app = Vue.createApp({
             listC1:[], listC2:[],
             selectS1   :"", selectS2   :"", selectS3   :"",
             textInS1   :"",
-            list01     :[],
             listsA     :["AHU","FCU","VAV","Extract_Fan","Supply_Fan","Smoke_Fan","Boiler","Chiller","Pump","Valve","Commissioning_Point"],
             listsB     :["DB","Switch_Board","Socket_Outlet","Fused_Outlet","Isolator"],
             listsC     :["CHW_Thermal_Energy","LTHW_Thermal_Energy","Electricity","Water","Gas"],
