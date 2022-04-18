@@ -69,7 +69,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-container w3-padding-16 w3-teal">
 <h3>Asset Details</h3>
 <div class="w3-row-padding-small">
-  <div class="w3-quarter">
+  <div class="w3-third">
     <select v-model="selectNA" v-on:change="listSystemsN()" class="w3-select" name="option">
     <option value="0" disabled selected>Select System</option>
     <option value="1">BMS</option>
@@ -89,19 +89,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <option value="15">IT</option>
     </select>
   </div>
-  <div class="w3-quarter">
+  <div class="w3-third">
     <select v-model="selectNB" class="w3-select" name="option">
     <option value="" disabled selected>Item</option>
     <option v-for="item in listN1">{{ item }}</option>
     </select>
   </div>
-  <div class="w3-quarter">
-    <select v-model="selectNC" class="w3-select" name="option">
-    <option value="" disabled selected>Location</option>
-    <option v-for="item in locate">{{ item }}</option>
-    </select>
-  </div>
-  <div class="w3-quarter">
+  <div class="w3-third">
       <div class="w3-container">
          <input v-on:input="inputA($event)" class="w3-input w3-border" type="text" placeholder="input Identifier">
       </div>
