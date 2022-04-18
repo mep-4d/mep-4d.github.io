@@ -319,9 +319,9 @@ const app = Vue.createApp({
 	    
         listSystemsN() {
             console.log("nameSelectionA");
-            var a = this.listsA
-            var b = this.listsB
-            var c = this.listsC
+            var a = ["","","","","","","","","","","","","","",""]
+            var b = ["","","","","","","","","","","","","","",""]
+            var c = ["","","","","","","","","","","","","","",""]
             var d = this.listsD
             var e = this.listsE
             var f = this.listsF
