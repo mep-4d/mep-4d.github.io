@@ -67,15 +67,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <header class="w3-container"><h3><b>Assets Naming Tool</b></h3></header>
 
 <div class="w3-container w3-padding-16 w3-teal">
-<h3>Device Identification</h3>
+<h3>Device Details</h3>
 <div class="w3-row-padding-small">
   <div class="w3-quarter">
     <select v-model="selectA" v-on:change="listItem()" class="w3-select" name="option">
     <option value="" disabled selected>System</option>
     <option value="1">Ventilation</option>
-    <option value="0">HTG</option>
-    <option value="0">CLG</option>
-    <option value="0">CWS</option>
+    <option value="0">Heating</option>
+    <option value="0">Cooling</option>
+    <option value="0">Water Services</option>
     <option value="2">Electrical</option>
     <option value="3">Metering</option>
     <option value="4">Lighting</option>
