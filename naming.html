@@ -71,18 +71,22 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-row-padding-small">
   <div class="w3-quarter">
     <select v-model="selectNA" v-on:change="listSystemsN()" class="w3-select" name="option">
-    <option value="." disabled selected>System</option>
+    <option value="0" disabled selected>System</option>
     <option value="1">BMS</option>
     <option value="2">PMS</option>
     <option value="3">EMS</option>
-    <option value="4">HVAC</option>
-    <option value="5">Lighting</option>
-    <option value="6">Metering</option>
-    <option value="7">Security</option>
-    <option value="8">Lifts</option>
-    <option value="9">AV</option>
-    <option value="10">Fire</option>
-    <option value="11">IT</option>
+    <option value="4">Heating</option>
+    <option value="5">Cooling</option>
+    <option value="6">Ventilation</option>
+    <option value="7">Public Health</option>
+    <option value="8">Ancillary HVAC</option>
+    <option value="9">Lighting</option>
+    <option value="10">Metering</option>
+    <option value="11">Security</option>
+    <option value="12">Lifts</option>
+    <option value="13">AV</option>
+    <option value="14">Fire</option>
+    <option value="15">IT</option>
     </select>
   </div>
   <div class="w3-quarter">
