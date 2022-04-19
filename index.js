@@ -342,6 +342,12 @@ const app = Vue.createApp({
             },
         inputS1(event) {
             this.textInS1 = event.target.value;
+            },
+	    
+        getHelpN() {
+		var a = this.selectNA
+		var b = this.selectNB
+		console.log(a, b)
             }
         
     }
