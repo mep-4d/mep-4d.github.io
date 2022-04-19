@@ -352,6 +352,7 @@ const app = Vue.createApp({
 	    if (a == "1" && b == "Panel") {
 		    this.helpN1 = "input the panel identifier in the text window exactly as its referenced, including hyphens or underscores. Replace spaces with hyphen"
             }
+	    }
         
     }
  
