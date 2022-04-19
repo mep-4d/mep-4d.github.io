@@ -310,7 +310,7 @@ const app = Vue.createApp({
             });    
 	    },
 	    
-        listSystemsN() {
+        listSystemsN() { // REQUIRED
             console.log("nameSelectionA");
             var a = ["Panel","Controller","I/O","Interface Screen","Interface Terminal","T Sensor Air","T Sensor Water","P Sensor Air","P Sensor Water","T Sensor Space",
 		     "Hum Sensor Space","AQ Sensor","T Stat Air","T Stat Water","Control Valve","Valve Actuator","Damper Actuator","VSD"
@@ -341,19 +341,26 @@ const app = Vue.createApp({
             else if (this.selectNA == "14") {this.listN1 = h; console.log("fir selected")} 
             else if (this.selectNA == "15") {this.listN1 = h; console.log("it. selected")} 
             },
-            inputN1(event) {
+            inputN1(event) { // REQUIRED
             this.textInN1 = event.target.value;
 		    console.log(event.target.value)
             },
 	    
-            getHelpN() {
+	    getAssetName() {
+		    var a = this.selectNA
+		    var b = this.selectNB
+		    var c = this.textInN1
+		    this.resource = a+b+c
+	    },
+	    
+            getHelpN() { // REQUIRED
 	    var a = this.selectNA
 	    var b = this.selectNB
 		console.log(a, b)
 	    if (a == "1" && b == "Panel") {
 		    this.helpN1 = "Input the panel identifier in the text box exactly as its referenced i.e MCC-01-01 including hyphens or underscores. "+
 			     "Replace any blank spaces with a hyphen i.e. CP 01 01 would become CP-01-01"
-            }
+            };
 	    }
         
     }
