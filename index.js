@@ -4,6 +4,7 @@ const app = Vue.createApp({
         return {
             selectNA:"", selectNB:"", selectNC:"",
             listN1     :[],
+            helpN1     :"",
             selectM1:"", selectM2:"", selectM3:"",
             listsMA    :["VMA","VMB","VMC","VMD","VME"],
             listsMB    :["HMA","HMB","HMC","HMD","HME"],
@@ -345,9 +346,11 @@ const app = Vue.createApp({
             },
 	    
             getHelpN() {
-		var a = this.selectNA
-		var b = this.selectNB
+	    var a = this.selectNA
+	    var b = this.selectNB
 		console.log(a, b)
+	    if (a == "1" && b == "Panel") {
+		    this.helpN1 = "input the panel identifier in the text window exactly as its referenced, including hyphens or underscores. Replace spaces with hyphen"
             }
         
     }
