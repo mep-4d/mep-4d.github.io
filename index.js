@@ -5,6 +5,7 @@ const app = Vue.createApp({
             selectNA:"", selectNB:"", selectNC:"",
             listN1     :[],
             textInN1   :"",
+	    asset      :"",
             helpN1     :"",
             selectM1:"", selectM2:"", selectM3:"",
             listsMA    :["VMA","VMB","VMC","VMD","VME"],
@@ -350,7 +351,7 @@ const app = Vue.createApp({
 		    var a = this.selectNA
 		    var b = this.selectNB
 		    var c = this.textInN1
-		    this.resource = a+b+c
+		    this.asset = a+b+c
 	    },
 	    
             getHelpN() { // REQUIRED
