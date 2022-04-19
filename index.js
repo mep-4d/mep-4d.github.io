@@ -4,6 +4,7 @@ const app = Vue.createApp({
         return {
             selectNA:"", selectNB:"", selectNC:"",
             listN1     :[],
+            textInN1   :"",
             helpN1     :"",
             selectM1:"", selectM2:"", selectM3:"",
             listsMA    :["VMA","VMB","VMC","VMD","VME"],
@@ -24,7 +25,6 @@ const app = Vue.createApp({
             listsCD    :["...","...","..."],
             listC1:[], listC2:[],
             selectS1   :"", selectS2   :"", selectS3   :"",
-            textInS1   :"",
             database   :[],
 	    tabledataM :[
  	    {a:"", b:"", c:"", d:"", e:"", f:"", g:"", h:"", i:""},
@@ -341,8 +341,8 @@ const app = Vue.createApp({
             else if (this.selectNA == "14") {this.listN1 = h; console.log("fir selected")} 
             else if (this.selectNA == "15") {this.listN1 = h; console.log("it. selected")} 
             },
-            inputS1(event) {
-            this.textInS1 = event.target.value;
+            inputN1(event) {
+            this.textInN1 = event.target.value;
             },
 	    
             getHelpN() {
