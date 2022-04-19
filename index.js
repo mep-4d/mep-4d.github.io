@@ -340,18 +340,18 @@ const app = Vue.createApp({
             else if (this.selectNA == "14") {this.listN1 = h; console.log("fir selected")} 
             else if (this.selectNA == "15") {this.listN1 = h; console.log("it. selected")} 
             },
-        inputS1(event) {
+            inputS1(event) {
             this.textInS1 = event.target.value;
             },
 	    
-        getHelpN() {
+            getHelpN() {
 		var a = this.selectNA
 		var b = this.selectNB
 		console.log(a, b)
             }
         
     }
-   
+ 
 });
 
 app.mount('#application');
