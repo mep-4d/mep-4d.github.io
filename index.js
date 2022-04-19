@@ -350,7 +350,7 @@ const app = Vue.createApp({
 	    var b = this.selectNB
 		console.log(a, b)
 	    if (a == "1" && b == "Panel") {
-		    this.helpN1 = "Input the panel identifier in the text box exactly as its referenced i.e MCC-01-01 including hyphens or underscores "+
+		    this.helpN1 = "Input the panel identifier in the text box exactly as its referenced i.e MCC-01-01 including hyphens or underscores. "+
 			     "Replace any blank spaces with a hyphen i.e. CP 01 01 would become CP-01-01"
             }
 	    }
