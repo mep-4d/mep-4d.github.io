@@ -343,6 +343,7 @@ const app = Vue.createApp({
             },
             inputN1(event) {
             this.textInN1 = event.target.value;
+		    console.log(event.target.value)
             },
 	    
             getHelpN() {
