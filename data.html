@@ -29,7 +29,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->
 <div class="w3-bar w3-top w3-indigo w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right"><b>HM Smart Enablement</b></span>
+  <span class="w3-bar-item w3-right"><b>HM Smart Enablement Toolkit</b></span>
 </div>
 
 <!-- Sidebar/menu -->
@@ -62,13 +62,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
   <!-- Header -->
-  <header class="w3-container"><h3><b>Mechanical Repository</b></h3></header>
+  <header class="w3-container"><h3><b>Asset Data Tool</b></h3></header>
 
 <div class="w3-container w3-padding-16 w3-teal">
-<h3>Equipment Finder</h3>
+<h3>Asset Finder</h3>
 <div class="w3-row-padding-small">
   <div class="w3-third">
-    <select v-model="selectM1" v-on:change="listItemsM()" class="w3-select" name="optionA">
+    <select v-model="selectD1" v-on:change="listItemsD()" class="w3-select" name="optionA">
     <option value="" disabled selected>System</option>
     <option value="1">Ventilation</option>
     <option value="2">Heating Equipment</option>
@@ -80,15 +80,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </select>
   </div>
   <div class="w3-third">
-    <select v-model="selectM2" v-on:change="listTypesM()" class="w3-select" name="optionB">
+    <select v-model="selectD2" v-on:change="listTypesD()" class="w3-select" name="optionB">
     <option value="" disabled selected>Equipment Manufacturer</option>
-    <option v-for="item in listM1">{{ item }}</option>
+    <option v-for="item in listD1">{{ item }}</option>
     </select>
   </div>
   <div class="w3-third">
-    <select v-model="selectM3" class="w3-select" name="optionC">
+    <select v-model="selectD3" class="w3-select" name="optionC">
     <option value="" disabled selected>Equipment Model</option>
-    <option v-for="item in listM2">{{ item }}</option>
+    <option v-for="item in listD2">{{ item }}</option>
     </select>
   </div>
 </div>
