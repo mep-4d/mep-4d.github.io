@@ -7,12 +7,8 @@ const app = Vue.createApp({
             textInN1   :"",
 	    asset      :"",
             helpN1     :"",
-            selectM1:"", selectM2:"", selectM3:"",
-            listsMA    :["VMA","VMB","VMC","VMD","VME"],
-            listsMB    :["HMA","HMB","HMC","HMD","HME"],
-            listsMC    :["CMA","CMB","CMC","CMD","CME"],
-            listsMD    :["ZMA","ZMB","ZMC","ZMD","ZME"],
-            listM1:[], listM2:[],
+            selectD1:"", selectD2:"", selectD3:"",
+            listD1:[], listD2:[],
             selectE1:"", selectE2:"", selectE3:"",
             listsEA    :["...","...","..."],
             listsEB    :["...","...","..."],
@@ -64,17 +60,6 @@ const app = Vue.createApp({
 
     methods: {
 	    
-            getData() {
-	    fetch("https://api.apispreadsheets.com/data/20934/").then(res=>{
-	    //if (res.status === 200){
-		res.json().then(data=>{
-			this.database = data
-		})//.catch(err => console.log(err))}else{console.log("nah")}
-                })
-            console.log("getting data from g-drive")
-            setTimeout(this.compileW, 4000)
-            },
-	    
 	    syntaxHighlight(json) {
             json = JSON.stringify(json, undefined, 4)
             json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -96,220 +81,231 @@ const app = Vue.createApp({
             return json
             }, // --- End of syntaxHighlight --- //
 	    
-	    listWorksA() {
-	    var a = this.selectW1
-	    if (a === "1") {this.createTableW1()}
-	    if (a === "2") {this.createTableW2()}
-	    },
-	    compileW() {
-	    var a = this.database
-	    var b = this.database.data.length
-            var c = this.tabledataW.length
-		    if (c == 0) {
-		    for (var i = 0; i < b; i++) {
-                    this.tabledataW.push({
-                    a:a.data[i].paramA,
-                    b:a.data[i].paramB,
-                    c:a.data[i].paramC,
-                    d:a.data[i].paramD,
-                    e:a.data[i].paramE,
-                    f:a.data[i].paramF,
-                    g:a.data[i].paramG,
-                    h:a.data[i].paramH,
-                    i:a.data[i].paramI,
-                    j:a.data[i].paramJ,
-                    });
-		    }}
-		    //this.createTableW()
-	    },
-            createTableW1() {
-	    var self = this;
-	    var table = new Tabulator("#works-table", {
-            rowClick:function(e, row){
-                    self.joblist = new Array(row._row.cells[0].value, row._row.cells[2].value);
-		    self.visibleW1 = true;
-		    self.detailWork();
-            },
- 	    data:this.tabledataW,
- 	    layout:"fitColumns",
- 	    columns:[ //Define Table Columns
-	 	{title:"System", field:"a"},
-	 	{title:"Works Required", field:"b"},
-	 	{title:"Issue Logged", field:"c"},
-	 	{title:"Date Logged", field:"d"},
- 	        ],
-            });    
-	    },
+            //getData() {
+	    //fetch("https://api.apispreadsheets.com/data/20934/").then(res=>{
+	    //if (res.status === 200){
+	    //	res.json().then(data=>{
+	    //		this.database = data
+	    //	})//.catch(err => console.log(err))}else{console.log("nah")}
+            //    })
+            //console.log("getting data from g-drive")
+            //setTimeout(this.compileW, 4000)
+            //},
 	    
-	    createTableW2() {
-	    var self = this;
-	    var table = new Tabulator("#works-table", {
-            rowClick:function(e, row){
-                    self.joblist = new Array(row._row.cells[0].value, row._row.cells[2].value);
-		    self.visibleW1 = true;
-		    self.detailWork();
-            },
- 	    data:this.tabledataW,
- 	    layout:"fitColumns",
- 	    columns:[ //Define Table Columns
-	 	{title:"System", field:"a"},
-	 	{title:"Works", field:"b"},
-	 	{title:"Scheduled Date", field:"e"},
- 	        ],
-            });    
-	    },
+	    //listWorksA() {
+	    //var a = this.selectW1
+	    //if (a === "1") {this.createTableW1()}
+	    //if (a === "2") {this.createTableW2()}
+	    //},
+	    //compileW() {
+	    //var a = this.database
+	    //var b = this.database.data.length
+            //var c = this.tabledataW.length
+		//    if (c == 0) {
+		//    for (var i = 0; i < b; i++) {
+                //    this.tabledataW.push({
+                //    a:a.data[i].paramA,
+                //    b:a.data[i].paramB,
+                //    c:a.data[i].paramC,
+                //    d:a.data[i].paramD,
+                //    e:a.data[i].paramE,
+                //    f:a.data[i].paramF,
+                //    g:a.data[i].paramG,
+                //    h:a.data[i].paramH,
+                //    i:a.data[i].paramI,
+                //    j:a.data[i].paramJ,
+                //    });
+		//    }}
+		//    //this.createTableW()
+	    //},
+            //createTableW1() {
+	    //var self = this;
+	    //var table = new Tabulator("#works-table", {
+            //rowClick:function(e, row){
+            //        self.joblist = new Array(row._row.cells[0].value, row._row.cells[2].value);
+		//    self.visibleW1 = true;
+		//    self.detailWork();
+            //},
+ 	    //data:this.tabledataW,
+ 	    //layout:"fitColumns",
+ 	    //columns:[ //Define Table Columns
+	 	//{title:"System", field:"a"},
+	 	//{title:"Works Required", field:"b"},
+	 	//{title:"Issue Logged", field:"c"},
+	 	//{title:"Date Logged", field:"d"},
+ 	        //],
+            //});    
+	    //},
 	    
-	    detailWork() {
-	    var selected = this.joblist[0];
-	    this.job = selected;
-	    },
+	    //createTableW2() {
+	    //var self = this;
+	    //var table = new Tabulator("#works-table", {
+            //rowClick:function(e, row){
+            //        self.joblist = new Array(row._row.cells[0].value, row._row.cells[2].value);
+		//    self.visibleW1 = true;
+		//    self.detailWork();
+            //},
+ 	    //data:this.tabledataW,
+ 	    //layout:"fitColumns",
+ 	    //columns:[ //Define Table Columns
+	 	//{title:"System", field:"a"},
+	 	//{title:"Works", field:"b"},
+	 	//{title:"Scheduled Date", field:"e"},
+ 	        //],
+            //});    
+	    //},
 	    
-	    compile() {
-		    var a = this.database
-		    var b = a.data.length
-		    var c = this.tabledataC.length
-		    if (c == 0) {
-		    for (var i = 0; i < b; i++) {
-	            if (a.data[i].paramJ.includes("bms")) {
-                    this.tabledataC.push({
-                    a:a.data[i].paramA,
-                    b:a.data[i].paramB,
-                    c:a.data[i].paramC,
-                    d:a.data[i].paramD,
-                    e:a.data[i].paramE,
-                    f:a.data[i].paramF,
-                    g:a.data[i].paramG,
-                    h:a.data[i].paramH,
-                    i:a.data[i].paramI,
-                    });
-		    }
-		    }
-		    }
-		    this.createTableC()
-	    },
+	    //detailWork() {
+	    //var selected = this.joblist[0];
+	    //this.job = selected;
+	    //},
 	    
-	    test() {
-		    var a = this.database
-		    var b = a.data
-		    var c = this.tabledataW
-		    var d = this.joblist
-		    var e = this.visibleW1
-		    console.log(d, e)
-	    },
+	    //compile() {
+		 //   var a = this.database
+		 //   var b = a.data.length
+		 //   var c = this.tabledataC.length
+		 //   if (c == 0) {
+		 //   for (var i = 0; i < b; i++) {
+	         //   if (a.data[i].paramJ.includes("bms")) {
+                 //   this.tabledataC.push({
+                 //   a:a.data[i].paramA,
+                 //   b:a.data[i].paramB,
+                 //   c:a.data[i].paramC,
+                 //   d:a.data[i].paramD,
+                 //   e:a.data[i].paramE,
+                 //   f:a.data[i].paramF,
+                 //   g:a.data[i].paramG,
+                 //   h:a.data[i].paramH,
+                 //   i:a.data[i].paramI,
+                 //   });
+		 //   }
+		 //   }
+		 //   }
+		 //   this.createTableC()
+	    //},
+	    
+	    //test() {
+		//    var a = this.database
+		//    var b = a.data
+		//    var c = this.tabledataW
+		//    var d = this.joblist
+		//    var e = this.visibleW1
+		//    console.log(d, e)
+	    //},
         
-            sendData() {
-            fetch("https://api.apispreadsheets.com/data/20934/", {
-	        method: "POST",
-	        body: JSON.stringify({"data": {"paramA":"a","paramB":"b","paramC":"c","paramD":"d","paramE":"e","paramF":"f","paramG":"g","paramH":"h","paramI":"i","paramJ":"j"}}),
-            }).then(res =>{
-	        if (res.status === 201){console.log("success")} 
-                else{console.log("nah")}
-            })
-            },
+            //sendData() {
+            //fetch("https://api.apispreadsheets.com/data/20934/", {
+	    //    method: "POST",
+	    //    body: JSON.stringify({"data": {"paramA":"a","paramB":"b","paramC":"c","paramD":"d","paramE":"e","paramF":"f","paramG":"g","paramH":"h","paramI":"i","paramJ":"j"}}),
+            //}).then(res =>{
+	    //    if (res.status === 201){console.log("success")} 
+            //    else{console.log("nah")}
+            //})
+            //},
 	    
-            listItemsM() {
-            console.log("selectionMA");
-            var a = this.listsMA
-            var b = this.listsMB
-            var c = this.listsMC
-            var d = this.listsMD
-            if (this.selectM1 == "1") {this.listM1 = a} 
-            else if (this.selectM1 == "2") {this.listM1 = b} 
-            else if (this.selectM1 == "3") {this.listM1 = c} 
-            else if (this.selectM1 == "4") {this.listM1 = d} 
-            },
-            listTypesM() {
-            console.log("selectionMB");
-	    if (this.selectM2.includes("VMA")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
-	    if (this.selectM2.includes("FCU")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
-	    if (this.selectM2.includes("VAV")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
-	    if (this.selectM2.includes("Ext")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
-	    if (this.selectM2.includes("Boi")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
-	    if (this.selectM2.includes("Chi")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
-	    if (this.selectM2.includes("Val")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
-	    if (this.selectM2.includes("Pum")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
-            },
-            createTableM() {
-	    var table = new Tabulator("#mechanical-table", {
- 	    data:this.tabledataM,
- 	    layout:"fitColumns",
- 	    columns:[ //Define Table Columns
-	 	{title:"Manufacturer", field:"a"},
-	 	{title:"Unit Code", field:"b"},
-	 	{title:"Description", field:"c"},
-	 	{title:"Features", field:"d", formatter:"textarea"},
-	 	{title:"Commission", field:"e"},
-	 	{title:"Performance", field:"f"},
-	 	{title:"Life", field:"g"},
-	 	{title:"Cost", field:"h"},
-	 	{title:"Issues", field:"i"},
- 	        ],
-            });    
-	    },
+            //listItemsM() {
+            //console.log("selectionMA");
+            //var a = this.listsMA
+            //var b = this.listsMB
+            //var c = this.listsMC
+            //var d = this.listsMD
+            //if (this.selectM1 == "1") {this.listM1 = a} 
+            //else if (this.selectM1 == "2") {this.listM1 = b} 
+            //else if (this.selectM1 == "3") {this.listM1 = c} 
+            //else if (this.selectM1 == "4") {this.listM1 = d} 
+            //},
+            //listTypesM() {
+            //console.log("selectionMB");
+	    //if (this.selectM2.includes("VMA")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    //if (this.selectM2.includes("FCU")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    //if (this.selectM2.includes("VAV")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    //if (this.selectM2.includes("Ext")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    //if (this.selectM2.includes("Boi")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    //if (this.selectM2.includes("Chi")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    //if (this.selectM2.includes("Val")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+	    //if (this.selectM2.includes("Pum")) {this.listM2 = new Array("Type1,Type2,Type3,Type4,Type5")};
+            //},
+            //createTableM() {
+	    //var table = new Tabulator("#mechanical-table", {
+ 	    //data:this.tabledataM,
+ 	    //layout:"fitColumns",
+ 	    //columns:[ //Define Table Columns
+	 	//{title:"Manufacturer", field:"a"},
+	 	//{title:"Unit Code", field:"b"},
+	 	//{title:"Description", field:"c"},
+	 	//{title:"Features", field:"d", formatter:"textarea"},
+	 	//{title:"Commission", field:"e"},
+	 	//{title:"Performance", field:"f"},
+	 	//{title:"Life", field:"g"},
+	 	//{title:"Cost", field:"h"},
+	 	//{title:"Issues", field:"i"},
+ 	        //],
+            //});    
+	    //},
         
-            listItemsE() {
-            console.log("selectionEA");
-            var a = this.listsEA
-            var b = this.listsEB
-            var c = this.listsEC
-            var d = this.listsED
-            if (this.selectE1 == "1") {this.listE1 = a} 
-            else if (this.selectE1 == "2") {this.listE1 = b} 
-            else if (this.selectE1 == "3") {this.listE1 = c} 
-            else if (this.selectE1 == "4") {this.listE1 = d} 
-            },
-            listTypesE() {
-            console.log("selectionEB");
-            },
-            createTableE() {
-	    var table = new Tabulator("#electrical-table", {
- 	    data:this.tabledataE,
- 	    layout:"fitColumns",
- 	    columns:[ //Define Table Columns
-	 	{title:"Manufacturer", field:"a"},
-	 	{title:"Unit Code", field:"b"},
-	 	{title:"Description", field:"c"},
-	 	{title:"Features", field:"d", formatter:"textarea"},
-	 	{title:"Commission", field:"e"},
-	 	{title:"Performance", field:"f"},
-	 	{title:"Life", field:"g"},
-	 	{title:"Cost", field:"h"},
-	 	{title:"Issues", field:"i"},
- 	        ],
-            });    
-	    },
+            //listItemsE() {
+            //console.log("selectionEA");
+            //var a = this.listsEA
+            //var b = this.listsEB
+            //var c = this.listsEC
+            //var d = this.listsED
+            //if (this.selectE1 == "1") {this.listE1 = a} 
+            //else if (this.selectE1 == "2") {this.listE1 = b} 
+            //else if (this.selectE1 == "3") {this.listE1 = c} 
+            //else if (this.selectE1 == "4") {this.listE1 = d} 
+            //},
+            //listTypesE() {
+            //console.log("selectionEB");
+            //},
+            //createTableE() {
+	    //var table = new Tabulator("#electrical-table", {
+ 	    //data:this.tabledataE,
+ 	    //layout:"fitColumns",
+ 	    //columns:[ //Define Table Columns
+	 	//{title:"Manufacturer", field:"a"},
+	 	//{title:"Unit Code", field:"b"},
+	 	//{title:"Description", field:"c"},
+	 	//{title:"Features", field:"d", formatter:"textarea"},
+	 	//{title:"Commission", field:"e"},
+	 	//{title:"Performance", field:"f"},
+	 	//{title:"Life", field:"g"},
+	 	//{title:"Cost", field:"h"},
+	 	//{title:"Issues", field:"i"},
+ 	        //],
+            //});    
+	    //},
 	    
-            listItemsC() {
-            console.log("selectionCA");
-            var a = this.listsCA
-            var b = this.listsCB
-            var c = this.listsCC
-            var d = this.listsCD
-            if (this.selectC1 == "1") {this.listC1 = a} 
-            else if (this.selectC1 == "2") {this.listC1 = b} 
-            else if (this.selectC1 == "3") {this.listC1 = c} 
-            else if (this.selectC1 == "4") {this.listC1 = d} 
-            },
-            listTypesC() {
-            console.log("selectionCB");
-            },
-            createTableC() {
-	    var table = new Tabulator("#controls-table", {
- 	    data:this.tabledataC,
- 	    layout:"fitColumns",
- 	    columns:[ //Define Table Columns
-	 	{title:"Manufacturer", field:"a"},
-	 	{title:"Product", field:"b"},
-	 	{title:"Description", field:"c"},
-	 	{title:"Features", field:"d", formatter:"textarea", width:240},
-	 	{title:"Engineering", field:"e"},
-	 	{title:"Performance", field:"f"},
-	 	{title:"Reliability", field:"g"},
-	 	{title:"Cost", field:"h"},
-	 	{title:"Real World", field:"i", formatter:"textarea", width:220},
- 	        ],
-            });    
-	    },
+            //listItemsC() {
+            //console.log("selectionCA");
+            //var a = this.listsCA
+            //var b = this.listsCB
+            //var c = this.listsCC
+            //var d = this.listsCD
+            //if (this.selectC1 == "1") {this.listC1 = a} 
+            //else if (this.selectC1 == "2") {this.listC1 = b} 
+            //else if (this.selectC1 == "3") {this.listC1 = c} 
+            //else if (this.selectC1 == "4") {this.listC1 = d} 
+            //},
+            //listTypesC() {
+            //console.log("selectionCB");
+            //},
+            //createTableC() {
+	    //var table = new Tabulator("#controls-table", {
+ 	    //data:this.tabledataC,
+ 	    //layout:"fitColumns",
+ 	    //columns:[ //Define Table Columns
+	 	//{title:"Manufacturer", field:"a"},
+	 	//{title:"Product", field:"b"},
+	 	//{title:"Description", field:"c"},
+	 	//{title:"Features", field:"d", formatter:"textarea", width:240},
+	 	//{title:"Engineering", field:"e"},
+	 	//{title:"Performance", field:"f"},
+	 	//{title:"Reliability", field:"g"},
+	 	//{title:"Cost", field:"h"},
+	 	//{title:"Real World", field:"i", formatter:"textarea", width:220},
+ 	        //],
+            //});    
+	    //},
 	    
         listSystemsN() { // REQUIRED
             console.log("nameSelectionA");
@@ -342,6 +338,7 @@ const app = Vue.createApp({
             else if (this.selectNA == "14") {this.listN1 = h; console.log("fir selected")} 
             else if (this.selectNA == "15") {this.listN1 = h; console.log("it. selected")} 
             },
+	    
             inputN1(event) { // REQUIRED
             this.textInN1 = event.target.value;
 		    console.log(event.target.value)
@@ -361,7 +358,7 @@ const app = Vue.createApp({
 	    if (a == "1" && b == "Panel") {
 		    this.helpN1 = "Input the panel identifier in the text box exactly as its referenced i.e MCC-01-01 including hyphens or underscores. "+
 			     "Replace any blank spaces with a hyphen i.e. CP 01 01 would become CP-01-01"
-            };
+            }; // else
 	    }
         
     }
