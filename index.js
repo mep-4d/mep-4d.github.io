@@ -65,14 +65,12 @@ const app = Vue.createApp({
 	    getLocation() {
             window.navigator.geolocation.getCurrentPosition(onSuccess, onError, {
             });
-            }
             function onSuccess(value) {
             console.log(value)
             }
             function onError(value) {
             console.log(value)
-            }
-	    } // end of get location
+	    }} // end of get location
 	    
 	    syntaxHighlight(json) {
             json = JSON.stringify(json, undefined, 4)
