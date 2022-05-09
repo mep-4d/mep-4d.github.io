@@ -63,14 +63,15 @@ const app = Vue.createApp({
     methods: {
 	    
 	    getLocation() {
+	    var self = this;
             window.navigator.geolocation.getCurrentPosition(onSuccess, onError, {
             });
             function onSuccess(value) {
             //console.log(value)
 		    console.log(value.coords.latitude)
-		    console.log(value.coords.latitude)
-		    this.locationA = "GO"
-		    this.locationB = value.coords.longitude
+		    console.log(value.coords.longitude)
+		    self.locationA = "GO"
+		    self.locationB = value.coords.longitude
             }
             function onError(value) {
             console.log(value)
