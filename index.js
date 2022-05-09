@@ -70,7 +70,7 @@ const app = Vue.createApp({
             //console.log(value)
 		    console.log(value.coords.latitude)
 		    console.log(value.coords.longitude)
-		    self.locationA = "GO"
+		    self.locationA = value.coords.latitude
 		    self.locationB = value.coords.longitude
             }
             function onError(value) {
