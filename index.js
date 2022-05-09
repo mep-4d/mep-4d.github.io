@@ -67,6 +67,8 @@ const app = Vue.createApp({
             });
             function onSuccess(value) {
             console.log(value)
+		    this.locationA = value.coords.latitude
+		    this.locationB = value.coords.longitude
             }
             function onError(value) {
             console.log(value)
