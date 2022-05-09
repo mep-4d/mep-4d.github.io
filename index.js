@@ -70,7 +70,7 @@ const app = Vue.createApp({
             }
             function onError(value) {
             console.log(value)
-	    }} // end of get location
+	    }}, // end of get location
 	    
 	    syntaxHighlight(json) {
             json = JSON.stringify(json, undefined, 4)
