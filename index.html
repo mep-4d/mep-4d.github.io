@@ -27,9 +27,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div id="application">
 
 <!-- Top container -->
-<div class="w3-bar w3-top w3-indigo w3-large" style="z-index:4">
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right"><b>HM - Smart Design Tool</b></span>
+  <span class="w3-bar-item w3-right"><b>Energy Manager</b></span>
 </div>
 
 <!-- Sidebar/menu -->
@@ -39,7 +39,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <!--<img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">-->
     </div>
     <div class="w3-col s8 w3-bar">
-      <span>Welcome <strong>Team Member</strong></span><br>
+      <span>Welcome, <strong>Team Member</strong></span><br>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
@@ -51,10 +51,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="/mechanical.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-wrench"></i>  Mechanical</a>
-    <a href="/electrical.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-plug"></i>  Electrical</a>
-    <a href="/controls.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-laptop"></i>  Controls</a>
-    <a href="/smarts.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-wifi"></i>  Smarts</a>
+    <a href="/top" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-home"></i>  Home</a>
+    <a href="/floors" class="w3-bar-item w3-button w3-padding"><i class="fa fa-building"></i>  Floors</a>
+    <a href="/general" class="w3-bar-item w3-button w3-padding"><i class="fa fa-file-text"></i>  Report</a>
   </div>
 </nav>
 
@@ -65,84 +64,162 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
   <!-- Header -->
-  <header class="w3-container"><h3><b>Smart Knowledge Base</b></h3></header>
-    
-<div class="w3-card-4">
-<header class="w3-container w3-blue-gray">
-  <h2>Mechanical</h2>
-</header>
-<div class="w3-container w3-dark-gray">
-    <ul class="w3-ul w3-card-4" style="width:100%">
-       <li><b>112 items</b></li>
-       <li>Crane / Danfoss / Flocontrol / Grundfos / Hattersley / Siemens / Wilo</li>
-    </ul>
+  <header class="w3-container" style="padding-top:22px">
+    <h4><b>Energy Performance Overview</b></h4>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-thumbs-down w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 id="val001">12</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Below Benchmark</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-yellow w3-padding-16">
+        <div class="w3-left"><i class="fa fa-hand-o-right w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 id="val002">144</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>On Benchmark</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-green w3-padding-16">
+        <div class="w3-left"><i class="fa fa-thumbs-up w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 id="val003">72</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Above Benchmark</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-wrench w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 id="val004">9</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Checks Required</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-panel">
+    <div class="w3-row-padding" style="margin:0 -16px">
+        
+      <div class="w3-half">
+        <h4><b>Energy Metrics</b></h4>
+        <table class="w3-table-all w3-card-4">
+            <tr>
+                <td>&#9989;</td>
+                <td>Electricity Demand</td>
+                <td id="val005">376 KVA</td>
+            </tr>
+            <tr>
+                <td>&#9989;</td>
+                <td>Fossil Thermal Demand</td>
+                <td id="val005">0.03 m3/s</td>
+            </tr>
+            <tr>
+                <td>&#9989;</td>
+                <td>EUI Footprint</td>
+                <td id="val005">0.09 KW/m2</td>
+            </tr>
+            <tr>
+                <td>&#9989;</td>
+                <td>EUI Occupant</td>
+                <td id="val005">0.13 KW/person</td>
+            </tr>
+            <tr>
+                <td>&#10060;</td>
+                <td>Building CO2 Intensity</td>
+                <td id="val005">0.11 Kg/s</td>
+            </tr>
+            <tr>
+                <td>&#10060;</td>
+                <td>Space Temperature Demand</td>
+                <td id="val005">Heating 11 KW / Cooling 5 KW</td>
+            </tr>
+            <tr>
+                <td>&#9989;</td>
+                <td>Hot Water Demand</td>
+                <td id="val005">0.02 KW</td>
+            </tr>
+        </table>
+      </div>
+      <div class="w3-half">
+        <h4><b>ABM Status</b></h4>
+        <table class="w3-table-all w3-card-4">
+          <tr>
+            <td><i class="fa fa-leaf w3-text-green w3-large"></i></td>
+            <td>Active Efficiency Offsets</td>
+            <td id="val005">18</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-leaf w3-text-green w3-large"></i></td>
+            <td>Climate Tracking Economiser</td>
+            <td id="val006">Active 76%</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-leaf w3-text-green w3-large"></i></td>
+            <td>Utilisation of Solar Gain</td>
+            <td id="val008">Active 69%</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-leaf w3-text-green w3-large"></i></td>
+            <td>Democratic Harmonisation</td>
+            <td id="val009">Active 91%</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-line-chart w3-text-orange w3-large"></i></td>
+            <td>Weekly Energy Usage Change</td>
+            <td id="val007">2.1% Decrease</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-check-square-o w3-text-green w3-large"></i></td>
+            <td>Building Comfort Grade</td>
+            <td id="val010">Good</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-check-square-o w3-text-green w3-large"></i></td>
+            <td>Building Energy Performance Grade</td>
+            <td id="val011">Good</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <div class="w3-panel">
+    <div class="w3-row-padding" style="margin:0 -16px">
+        
+      <div class="w3-half">
+        <h4><b>Live Energy Demand (% of total)</b></h4>
+        <column-chart :data="columnChartA"></column-chart>
+      </div>
+      
+      <div class="w3-half">
+        <h4><b>Building Energy Demand(24 hour)</b></h4>
+        <line-chart :data="lineChartA"></line-chart>
+      </div>
+  
+  </div>
+  </div>
 </div>
-<footer class="w3-container w3-padding-16 w3-blue-gray">
-  <a href="/mechanical.html" class="w3-btn w3-ripple w3-indigo">GO TO Repository</a>
-</footer>
-</div>
-    
-<br>
-    
-<div class="w3-card-4">
-<header class="w3-container w3-blue-gray">
-  <h2>Electrical</h2>
-</header>
-<div class="w3-container w3-dark-gray">
-    <ul class="w3-ul w3-card-4" style="width:100%">
-       <li><b>118 items</b></li>
-       <li>ABB / Chana / Legrand / MK / Merlin Gerin / Siemens / Schneider</li>
-    </ul>
-</div>
-<footer class="w3-container w3-padding-16 w3-blue-gray">
-  <a href="/electrical.html" class="w3-btn w3-ripple w3-indigo">GO TO Repository</a>
-</footer>
 </div>
 
-<br>
+    <script src="https://unpkg.com/chart.js@2.8.0/dist/Chart.bundle.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://unpkg.com/vue-chartkick@0.5.1"></script>
+    <script src="./index.js"></script>
     
-<div class="w3-card-4">
-<header class="w3-container w3-blue-gray">
-  <h2>Controls</h2>
-</header>
-<div class="w3-container w3-dark-gray">
-    <ul class="w3-ul w3-card-4" style="width:100%">
-       <li><b>124 items</b></li>
-       <li>Trend / Tridium / Schneider / Siemens / Titan</li>
-    </ul>
-</div>
-<footer class="w3-container w3-padding-16 w3-blue-gray">
-  <a href="/controls.html" class="w3-btn w3-ripple w3-indigo">GO TO Repository</a>
-</footer>
-</div>
-
-<br>
-    
-<div class="w3-card-4">
-<header class="w3-container w3-blue-gray">
-  <h2>Smarts</h2>
-</header>
-<div class="w3-container w3-dark-gray">
-    <ul class="w3-ul w3-card-4" style="width:100%">
-       <li><b>124 items</b></li>
-       <li>Hawken / Siemens / SmartSpace / J2</li>
-    </ul>
-</div>
-<footer class="w3-container w3-padding-16 w3-blue-gray">
-  <a href="/smarts.html" class="w3-btn w3-ripple w3-indigo">GO TO Repository</a>
-</footer>
-</div>
-
-  <!-- Footer -->
-  <footer class="w3-container w3-padding-16 w3-light-grey">
-    <p>Powered by Nick Willment</p>
-  </footer>
-
-</div>
-  <!-- End page content -->
-</div>
-    
-<script src="./index.js"></script>
 <script>
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
@@ -152,7 +229,6 @@ var overlayBg = document.getElementById("myOverlay");
 
 // Toggle between showing and hiding the sidebar, and add overlay effect
 function w3_open() {
-  console.log("should be working yo");
   if (mySidebar.style.display === 'block') {
     mySidebar.style.display = 'none';
     overlayBg.style.display = "none";
@@ -167,33 +243,6 @@ function w3_close() {
   mySidebar.style.display = "none";
   overlayBg.style.display = "none";
 }
-</script>
-    
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  //import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
-  //import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-analytics.js";
-  //import { getDatabase } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
-
-  // Your web app's Firebase configuration
-  //const firebaseConfig = {
-  //  apiKey: "AIzaSyD5y5No1gaKWSpASSUaLVpnjqgesDrxzME",
-  //  authDomain: "mep-4d.firebaseapp.com",
-  //  databaseURL: "https://mep-4d-default-rtdb.europe-west1.firebasedatabase.app",
-  //  projectId: "mep-4d",
-  //  storageBucket: "mep-4d.appspot.com",
-  //  messagingSenderId: "557540686744",
-  //  appId: "1:557540686744:web:7640308477679d800849ed",
-  //  measurementId: "G-0R0V46G086"
-  //};
-
-  // Initialize Firebase
-  //const app = initializeApp(firebaseConfig);
-  //const analytics = getAnalytics(app);
-  //const database = getDatabase(app);
-    
-  //  console.log("test db");
-  //  console.log(database, 'blah')
 </script>
 
 </body>
