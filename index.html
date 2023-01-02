@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>MSI Tools</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="http://example.com/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="./index.js" defer></script>
+
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+
+</head>
+
+<body class="n0-light-grey">
+
+    <div id="application">
+
+        <!-- Top container -->
+        <div class="n0-bar n0-top n0-indigo n0-large" style="z-index:4">
+            <button class="n0-bar-item n0-button n0-hide-large n0-hover-none n0-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+            <span class="n0-bar-item n0-right"><b>Smart Enablement Toolkit</b></span>
+        </div>
+
+        <!-- Sidebar/menu -->
+        <nav class="n0-sidebar n0-collapse n0-white n0-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+            <div class="n0-container n0-row">
+                <div class="n0-col s4">
+                    <!--<img src="/w3images/avatar2.png" class="n0-circle n0-margin-right" style="width:46px">-->
+                </div>
+                <div class="n0-col s8 n0-bar">
+                    <span>Welcome <strong>MSI</strong></span><br>
+                    <a href="#" class="n0-bar-item n0-button"><i class="fa fa-envelope"></i></a>
+                    <a href="#" class="n0-bar-item n0-button"><i class="fa fa-user"></i></a>
+                    <a href="#" class="n0-bar-item n0-button"><i class="fa fa-cog"></i></a>
+                </div>
+            </div>
+            <hr>
+            <div class="n0-container">
+                <h5>Menu</h5>
+            </div>
+            <div class="n0-bar-block">
+                <a href="#" class="n0-bar-item n0-button n0-padding-16 n0-hide-large n0-dark-grey n0-hover-black"
+                    onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+                <a href="#"
+                    class="n0-bar-item n0-button n0-padding"><i class="fa fa-home"></i>  Home</a>
+            </div>
+        </nav>
+
+        <!-- Overlay effect when opening sidebar on small screens -->
+        <div class="n0-overlay n0-hide-large n0-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+            title="close side menu" id="myOverlay"></div>
+
+        <!-- !PAGE CONTENT! -->
+        <div class="n0-main" style="margin-left:300px;margin-top:43px;">
+
+            <!-- Header -->
+            <header class="n0-container">
+
+            </header>
+
+            <div class="n0-container n0-padding-16 n0-dark-grey">
+                <div class="n0-row-padding-small">
+                    <div>
+
+<h2> Building Data Model </h2>
+
+<p>Sensible design, for modern smart buildings!</p>
+
+<p>This toolset is aimed at guiding the semantic model design of smart enabled buildings. MSI's/SI's and control system
+vendors should use it to name & represent devices, points and parameters accross all smart enabled systems and 
+application developers should use it to identify assets which they intend to integrate with</p>
+
+<p>The toolset aims to simplify the smart enablement journey and is made up of three core elements which are;</p>
+
+<ol>
+    <li><strong>Asset naming tool that enables the unique identification/naming of every physical object within a building</strong>
+    </li>
+    <li><strong>Point naming tool that enables the naming of every physical/virtual control object within a building</strong>
+    </li>
+    <li><strong>Data structuring tool that enables design of data being surfaced</strong>
+    </li>
+</ol>
+
+<p>Each tool is available as a dedicated web app to speed up and ensure success of smart building projects</p>
+
+<h2> Asset Naming </h2>
+
+<p>Each asset shall be named in accordance with the following naming structure:</p>
+
+For main devices;
+<strong>SystemRef_SystemItem_ItemID</strong>
+
+<ul>
+    <li><strong>SystemRef:</strong> shall be a three character string abbreviation for the system which the asset is a
+        part of i.e. htg (heating)</li>
+    <li><strong>SystemItem:</strong> shall be a three character string abbreviation that describes the asset type i.e.
+        pmp (pump)</li>
+    <li><strong>ItemID:</strong> shall be a four character unique identifier for the asset i.e. 001a</li>
+</ul>
+
+<p>This example names a main asset (heating pump) --> htg_pmp_001a</p>
+
+<p>For sub-devices which are components of assets;</p>
+<strong>_SubItem</strong> is appended to the associated main asset name
+
+<ul>
+    <li><strong>SubItem:</strong> shall be a string descriptor that represents a component of the asset. The string
+        shall use camel case and be made up of a maximum three words (a,b,c) where (a) is a context string i.e.
+        differential, (b) is a variable descriptor i.e. Pressure, (c) is the component descriptor i.e. Switch</li>
+</ul>
+
+<p>This example names a component of the main asset --> htg_pmp_001a_diffPressSwitch</p>
+
+<p>To make the above asset names truly global <strong>BuildingRef_</strong> is prepended to the asset name where required.
+BuildingRef is a five character string that uniquely identifies the building i.e. 100ls, so the above asset would become
+globally identifiable as 100ls_htg_pmp_001a</p>
+
+<a href="/naming">HERE IS A NAMING TOOL</a>
+
+<h2> Control Object Naming </h2>
+
+<p>Each control point that is a associated with a main device shall be named in accordance with the following naming
+structure:</p>
+
+<strong>main asset name_Variable_PointType</strong>
+
+<ul>
+    <li><strong>main asset name:</strong> shall be the device name as per the previous section i.e. htg_pmp_001a</li>
+    <li><strong>Variable:</strong> shall be a descriptor that represents the physical, measured or controlled dicrete or
+        continuous variable i.e. fault</li>
+    <li><strong>PointType:</strong> shall be a descriptor that represents the type of control point and its use i.e.
+        status</li>
+</ul>
+
+<p>This example names a control point --> htg_pmp_001a_fault_status</p>
+
+<p>Each control point that is part of a sub-device shall be named in accordance with the following naming structure:</p>
+
+<strong>SubItem_Variable_PointType</strong>
+
+<ul>
+    <li><strong>SubItem:</strong> shall be the name of the sub-device which the point is a child component of i.e.
+        htgValve</li>
+    <li><strong>Variable:</strong> shall be a descriptor that represents the physical, measured or controlled variable
+        i.e. position</li>
+    <li><strong>PointType:</strong> shall be a descriptor that represents the type of control point and its use i.e.
+        control</li>
+</ul>
+
+<p>This example names a control point --> htgValve_position_control</p>
+
+<p>In this example the main device could be a fan coil unit with example name mep_fcu_1001, and the control point which is
+a child object of the main device would therefore have the fully qualified name of
+mep_fcu_1001_htgValve_position_control</p>
+
+
+<h2> Surfacing Data </h2>
+
+<p>All building data will be encapsulated within JSON objects and transported over MQTT protocol. An MQTT broker is provided
+either internal or external to the building network for third party data access. Data will be published from systems to
+the broker allowing third party data read, and data will be subscribed to by systems via the broker allowing third party
+data write. MQTT topics provide differentialtion between systems, devices and data direction.</p>
+
+<p>For each published data object from site to the broker, the topic string is appended with **_north**</p>
+
+<p>For each subscribed data object from the broker to site, the topic string is appended with **_south**</p>
+
+<p>For meta data like objects that are handled differently, the topic string is appended with **_east**</p>
+
+<a href="/naming">HERE IS A DATA TOOL</a>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Footer -->
+            <footer class="n0-container n0-padding-16 n0-light-grey">
+                <p>Powered by Nick Willment</p>
+            </footer>
+
+        </div>
+        <!-- End page content -->
+    </div>
+
+    <script src="../uibuilder/vendor/socket.io/socket.io.js"></script>
+    <script src="./uibuilderfe.min.js"></script>
+    <script src="../uibuilder/vendor/jquery/dist/jquery.js"></script>
+    
+    <script>
+        // Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  console.log("should be working yo");
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+    </script>
+
+</body>
+
+</html>
