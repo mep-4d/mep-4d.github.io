@@ -103,7 +103,7 @@ const app = Vue.createApp({
             } else if (id.toString().length == 2) {
                 str = "0".concat(id)
             } else if (id == "") {
-                str = "AAA | where AAA is a unique numeric item reference for that floor"
+                str = "NNN | where NNN is a unique numeric item reference for that floor"
             } else {
                 str = id
             }
