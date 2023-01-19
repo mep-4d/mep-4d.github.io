@@ -36,7 +36,8 @@ const app = Vue.createApp({
                 "air", "air_differential", "inlet_air", "return_air", "supply_air", "exhaust_air","fan","supply_fan","extract_fan",
                 "water", "water_differential", "return_water", "flow_water","storage_water","pump","pump_set","damper",
                 "off_coil","space","duct","frost","high_limit","low_limit","ambient","general","global","capacity",
-                "system","unit","zone","occupancy","non_occupancy"
+                "system","unit","zone","occupancy","non_occupancy",
+                "heating_flow","heating_return","cooling_flow","cooling_return","condense_flow","condense_return"
             ],
             list05: [
                 "temperature","pressure","flow","humidity","lux","co2","voc","co","no2","o3","run","fault","enable",
