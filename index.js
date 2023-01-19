@@ -40,7 +40,7 @@ const app = Vue.createApp({
             ],
             list05: [
                 "temperature","pressure","flow","humidity","lux","co2","voc","co","no2","o3","run","fault","enable",
-                "level","position","open","closed","intensity","mode","%","band","deadband"
+                "alarm","level","position","open","closed","intensity","mode","%","band","deadband"
             ],
             list06: [
                 "sensor", "setpoint", "value", "input", "output", "status"
