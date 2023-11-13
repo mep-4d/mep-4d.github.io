@@ -9,7 +9,29 @@ var controller = new demoApp();
 function demoApp() {
     console.log("Creating controller/model");
 
-    var getUrl = "https://attain.aeronlabs.com/";
+    var URL = "https://attain.aeronlabs.com/";
+
+    this.authenticate = function () {
+            console.log("RUNNING AUTH");
+            const ACCESS_TOKEN_STORAGE_KEY = "token";
+            const token = localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
+            console.log(token)
+            if (token === null) {
+                //const URL = "https://attain.aeronlabs.com/";
+                localStorage.setItem("prevPage", window.location.href);
+                window.location.href = URL + "login";
+                return;
+            }
+        },
+        
+        this.logout = function () {
+            //const URL = "https://attain.aeronlabs.com/";
+            const ACCESS_TOKEN_STORAGE_KEY = "token";
+            const token = localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
+            localStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);
+            localStorage.removeItem("prevPage");
+            window.location.href = URL + "login";
+        }
 
     this.userLogin = function () {
         var userPw = $("#userPword").val(); // GET PASSWORD
@@ -17,7 +39,7 @@ function demoApp() {
         var lname = $("#userLname").val(); // GET LAST NAME INPUT
         console.log(fname, lname, userPw);
         // SEND DATA TO AUTH ENDPOINT
-        var url = getUrl + `test?creds=${fname+lname+userPw}`
+        var url = URL + `test?creds=${fname+lname+userPw}`
         $.ajax(url, { type: "GET", data: {}, success: onSuccess });
         function onSuccess(data) { // RETURNS TOKEN -> STORE IN LOCAL OBJECT
             console.log(data)
