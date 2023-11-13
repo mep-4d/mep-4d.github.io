@@ -9,6 +9,7 @@ var controller = new demoApp();
 function demoApp() {
     console.log("Creating controller/model");
     this.authenticate();
+    console.log("authenticating")
 
     var URL = "https://attain.aeronlabs.com/";
 
