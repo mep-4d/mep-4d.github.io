@@ -20,7 +20,7 @@ function demoApp() {
             if (token === null) {
                 //const URL = "https://attain.aeronlabs.com/";
                 localStorage.setItem("prevPage", window.location.href);
-                window.location.href = URL + "login";
+                window.location.href = URL + "auth";
                 return;
             }
         },
@@ -31,7 +31,7 @@ function demoApp() {
             const token = localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
             localStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);
             localStorage.removeItem("prevPage");
-            window.location.href = URL + "login";
+            window.location.href = URL + "auth";
         }
 
     this.userLogin = function () {
