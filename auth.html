@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+    <title>Security</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://example.com/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="./index.js" defer></script>
+
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+
+</head>
+
+<body class="n0-light-grey">
+
+<div id="logon-page">
+            
+<form v-on:submit.prevent="runAuth" class="n0-container n0-card-4 n0-light-grey n0-text-blue n0-margin">
+<h2 class="n0-center">Technical User Guide Login</h2>
+ 
+<div class="n0-row n0-section">
+  <div class="n0-col" style="width:50px"><i class="n0-xxlarge fa fa-user"></i></div>
+    <div class="n0-rest">
+      <input class="n0-input n0-border" name="username" type="text" placeholder="User Name" v-model="inputA01">
+    </div>
+</div>
+
+<div class="n0-row n0-section">
+  <div class="n0-col" style="width:50px"><i class="n0-xxlarge fa fa-pencil"></i></div>
+    <div class="n0-rest">
+      <input class="n0-input w3-border" name="message" type="password" placeholder="Password" v-model="inputB01">
+    </div>
+</div>
+
+<button type="submit" class="n0-button n0-block n0-section n0-blue n0-ripple n0-padding" v-on:submit="runAuth()">Send</button>
+
+</form>
+
+</div>
+
+    <script>
+        // Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  console.log("should be working yo");
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+    </script>
+
+</body>
+
+</html>
