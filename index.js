@@ -33,5 +33,6 @@ function userLogin() {
 }
 
 $(function() {
+    console.log("auth_running")
     authenticate();
 })
