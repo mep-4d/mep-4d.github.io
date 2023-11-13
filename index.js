@@ -40,7 +40,7 @@ function demoApp() {
         var lname = $("#userLname").val(); // GET LAST NAME INPUT
         console.log(fname, lname, userPw);
         // SEND DATA TO AUTH ENDPOINT
-        var url = URL + `test?creds=${fname+lname+userPw}`
+        var url = URL + `auth?creds=${fname+":"+userPw}`
         $.ajax(url, { type: "GET", data: {}, success: onSuccess });
         function onSuccess(data) { // RETURNS TOKEN -> STORE IN LOCAL OBJECT
             console.log(data)
