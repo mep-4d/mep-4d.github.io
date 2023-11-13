@@ -9,15 +9,15 @@ var controller = new demoApp();
 function demoApp() {
     console.log("Creating controller/model");
 
-    var getUrl = "https://attain.aeronlabs.com";
+    var getUrl = "https://attain.aeronlabs.com/";
 
     this.userLogin = function () {
-        var oucu = $("#userId").val(); // GET OUCU
+        var userPw = $("#userId").val(); // GET PW
         var fname = $("#userFname").val(); // GET FIRST NAME INPUT
         var lname = $("#userLname").val(); // GET LAST NAME INPUT
-        console.log(fname, lname, oucu);
-        //GET ALL ORDERS FOR OUCU
-        var url = getUrl + "/test"
+        console.log(fname, lname, userId);
+        // SEND DATA TO AUTH ENDPOINT
+        var url = getUrl + `test?creds=${fname+lname+userPw}`
         $.ajax(url, { type: "GET", data: {}, success: onSuccess });
         function onSuccess(data) { // STORE ORDERS IN GLOBAL OBJECT
             console.log(data)
@@ -26,14 +26,5 @@ function demoApp() {
             }
         this.match()
         }
-
-    this.userRegister = function() { // THIS FUNCTION REGISTERS A NEW USER (FR3)
-        var oucu = $("#userId").val(); // GET OUCU
-        var regUrl = getUrl + "/test"
-        $.ajax(regUrl, { type: "POST", data: { oucu: oucu }, success: onSuccess });
-        function onSuccess(data) { // INFORM OF REGISTRATION STATUS
-            console.log(data)
-            }
-    }
 
 }
