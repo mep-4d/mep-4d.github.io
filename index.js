@@ -13,27 +13,27 @@ function demoApp() {
 
     var URL = "https://attain.aeronlabs.com/";
 
-    this.authenticate = function () {
-            console.log("RUNNING AUTH");
-            const ACCESS_TOKEN_STORAGE_KEY = "token";
-            const token = localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
-            console.log(token)
-            if (token === null) {
-                //const URL = "https://attain.aeronlabs.com/";
-                localStorage.setItem("prevPage", window.location.href);
-                window.location.href = URL + "auth";
-                return;
-            }
-        },
-        
-        this.logout = function () {
+this.authenticate = function () {
+        console.log("RUNNING AUTH");
+        const ACCESS_TOKEN_STORAGE_KEY = "token";
+        const token = localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
+        console.log(token)
+        if (token === null) {
             //const URL = "https://attain.aeronlabs.com/";
-            const ACCESS_TOKEN_STORAGE_KEY = "token";
-            const token = localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
-            localStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);
-            localStorage.removeItem("prevPage");
+            localStorage.setItem("prevPage", window.location.href);
             window.location.href = URL + "auth";
+            return;
         }
+    },
+        
+    this.logout = function () {
+        //const URL = "https://attain.aeronlabs.com/";
+        const ACCESS_TOKEN_STORAGE_KEY = "token";
+        const token = localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
+        localStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);
+        localStorage.removeItem("prevPage");
+        window.location.href = URL + "auth";
+    }
 
     this.userLogin = function () {
         var userPw = $("#userPword").val(); // GET PASSWORD
