@@ -2,7 +2,7 @@
 // Execute in strict mode to prevent some common mistakes
 "use strict";
 
-// Create object for use by the HTML view
+// Create object for use by the HTML page
 var controller = new demoApp();
 
 // JavaScript "class" containing the model, providing controller "methods" for the HTML view
