@@ -36,17 +36,13 @@
         <h4>User Login</h4>
         <div class="n0-row-padding-small">
           <div class="n0-third">
-            <input id="userFname" class="n0-input n0-border" type="text" placeholder="First Name">
+            <input id="username" class="n0-input n0-border" type="text" placeholder="User Name">
           </div>
           <div class="n0-third">
-            <input id="userLname" class="n0-input n0-border" type="text" placeholder="Last Name">
-          </div>
-          <div class="n0-third">
-            <input id="userPword" class="n0-input n0-border" type="text" placeholder="Password">
+            <input id="password" class="n0-input n0-border" type="text" placeholder="Password">
           </div>
         </div>
-        <input type="button" onclick="controller.userLogin()" class="n0-button n0-blue-grey" value="Login">
-        <input type="button" onclick="controller.userRegister()" class="n0-button n0-blue-grey" value="Register">
+        <input type="button" onclick="userLogin()" class="n0-button n0-blue-grey" value="Login">
       </div>
             
 <!--form v-on:submit.prevent="runAuth" class="n0-container n0-card-4 n0-light-grey n0-text-blue n0-margin">
