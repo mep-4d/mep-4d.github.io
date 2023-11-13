@@ -12,10 +12,10 @@ function demoApp() {
     var getUrl = "https://attain.aeronlabs.com/";
 
     this.userLogin = function () {
-        var userPw = $("#userId").val(); // GET PW
+        var userPw = $("#userPword").val(); // GET PASSWORD
         var fname = $("#userFname").val(); // GET FIRST NAME INPUT
         var lname = $("#userLname").val(); // GET LAST NAME INPUT
-        console.log(fname, lname, userId);
+        console.log(fname, lname, userPw);
         // SEND DATA TO AUTH ENDPOINT
         var url = getUrl + `test?creds=${fname+lname+userPw}`
         $.ajax(url, { type: "GET", data: {}, success: onSuccess });
