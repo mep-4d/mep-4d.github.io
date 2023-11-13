@@ -31,26 +31,39 @@
 <body class="n0-light-grey">
 
 <div id="logon-page">
+
+      <div class="n0-container n0-grey n0-padding n0-card-4">
+        <h4>User Login</h4>
+        <div class="n0-row-padding-small">
+          <div class="n0-third">
+            <input id="userFname" class="n0-input n0-border" type="text" placeholder="First Name">
+          </div>
+          <div class="n0-third">
+            <input id="userLname" class="n0-input n0-border" type="text" placeholder="Last Name">
+          </div>
+          <div class="n0-third">
+            <input id="userId" class="n0-input n0-border" type="text" placeholder="OUCU">
+          </div>
+        </div>
+        <input type="button" onclick="controller.userLogin()" class="n0-button n0-blue-grey" value="Login">
+        <input type="button" onclick="controller.userRegister()" class="n0-button n0-blue-grey" value="Register">
+      </div>
             
 <!--form v-on:submit.prevent="runAuth" class="n0-container n0-card-4 n0-light-grey n0-text-blue n0-margin">
 <h2 class="n0-center">Technical User Guide Login</h2>
- 
 <div class="n0-row n0-section">
   <div class="n0-col" style="width:50px"><i class="n0-xxlarge fa fa-user"></i></div>
     <div class="n0-rest">
       <input class="n0-input n0-border" name="username" type="text" placeholder="User Name" v-model="inputA01">
     </div>
 </div>
-
 <div class="n0-row n0-section">
   <div class="n0-col" style="width:50px"><i class="n0-xxlarge fa fa-pencil"></i></div>
     <div class="n0-rest">
       <input class="n0-input w3-border" name="message" type="password" placeholder="Password" v-model="inputB01">
     </div>
 </div>
-
 <button type="submit" class="n0-button n0-block n0-section n0-blue n0-ripple n0-padding" v-on:submit="runAuth()">Send</button>
-
 </form-->
 
 </div>
