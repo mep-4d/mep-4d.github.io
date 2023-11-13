@@ -10,7 +10,7 @@ function demoApp() {
     console.log("Creating controller/model");
     var URL = "https://attain.aeronlabs.com/";
 
-    authenticate = function () {
+    this.authenticate = function () {
         console.log("RUNNING AUTH");
         const ACCESS_TOKEN_STORAGE_KEY = "token";
         const token = localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
@@ -49,6 +49,6 @@ function demoApp() {
         //this.match()
     }
 
-    authenticate()
+    this.authenticate()
 
 }
