@@ -1,13 +1,13 @@
 // console.log("Creating controller/model");
-const URL = "https://attain.aeronlabs.com/";
+const API_URL = "https://attain.aeronlabs.com/";
 const ACCESS_TOKEN_STORAGE_KEY = "token";
 const SPACER = ":";
 
 function authenticate() {
     const token = localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
     if (token === null) {
-        localStorage.setItem("prevPage", window.location.href);
-        window.location.href = URL + "auth";
+        //localStorage.setItem("prevPage", window.location.href);
+        window.location.href = "https://mep-4d.github.io/auth";
         return;
     }
 }
