@@ -39,9 +39,10 @@ function demoApp() {
         var userPw = $("#userPword").val(); // GET PASSWORD
         var fname = $("#userFname").val(); // GET FIRST NAME INPUT
         var lname = $("#userLname").val(); // GET LAST NAME INPUT
+        const spacer = ":"
         console.log(fname, lname, userPw);
         // SEND DATA TO AUTH ENDPOINT
-        var url = URL + `auth?creds=${fname+":"+userPw}`
+        var url = URL + `auth?creds=${fname+spacer+userPw}`
         $.ajax(url, { type: "GET", data: {}, success: onSuccess });
         function onSuccess(data) { // RETURNS TOKEN -> STORE IN LOCAL OBJECT
             console.log(data)
