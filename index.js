@@ -5,7 +5,7 @@ const SPACER = ":";
 
 function authenticate() {
     const token = localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
-    if (token === null) {
+    if (token === null && window.location.href!=="https://mep-4d.github.io/auth") {
         //localStorage.setItem("prevPage", window.location.href);
         window.location.href = "https://mep-4d.github.io/auth";
         return;
