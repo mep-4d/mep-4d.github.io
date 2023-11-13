@@ -8,7 +8,6 @@ var controller = new demoApp();
 // JavaScript "class" containing the model, providing controller "methods" for the HTML view
 function demoApp() {
     console.log("Creating controller/model");
-    authenticate()
 
     var URL = "https://attain.aeronlabs.com/";
 
@@ -50,5 +49,7 @@ function demoApp() {
             }
         //this.match()
     }
+
+    authenticate()
 
 }
