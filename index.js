@@ -19,7 +19,7 @@ function demoApp() {
         // SEND DATA TO AUTH ENDPOINT
         var url = getUrl + `test?creds=${fname+lname+userPw}`
         $.ajax(url, { type: "GET", data: {}, success: onSuccess });
-        function onSuccess(data) { // STORE ORDERS IN GLOBAL OBJECT
+        function onSuccess(data) { // RETURNS TOKEN -> STORE IN LOCAL OBJECT
             console.log(data)
             var self = globalThis;
             self.things= data;
