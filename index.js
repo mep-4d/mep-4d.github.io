@@ -24,7 +24,7 @@ function demoApp() {
             var self = globalThis;
             self.things= data;
             }
-        this.match()
+        //this.match()
         }
 
 }
